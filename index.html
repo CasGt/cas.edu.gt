@@ -1,11 +1,909 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CAS</title>
+    <link rel="icon" href="./src/img/logo_cas_white.webp">
+    <link href="./css/output.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./plugin/whatsapp-chat-support.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="./src/css/style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <h1>Se cayó la página ahhh</h1>
+    <!-- Navbar -->
+    <nav class="bg-red-950 shadow-md z-20">
+        <div class="container mx-auto py-6 z-50">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+
+                    <!-- <img src="./src/img/logo_cas_white.webp" alt="Logo" class="h-8"> -->
+                    
+                    <a href="https://www.cas.edu.gt">
+                    <img src="./src/img/logo_cas_white.webp" alt="Logo CAS" id="logo" class="h-8">
+                    </a>
+                    
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-100 hover:text-yellow-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden md:block z-50">
+                    <ul id="menu" class="flex space-x-6 ">
+                        <li class="relative">
+                            <a href="#" class="text-gray-100 hover:text-yellow-500">Académico</a>
+                            <ul class="absolute left-0 top-full hidden bg-white shadow-md py-2 px-4 space-y-2 w-60 ">
+                                <li><a href="./subpages/research_projects_esp.html">Proyectos de Investigación</a>
+                                </li>
+                                <!--<li><a href="https://cas.edu.gt/docs/BeneficiosDeLectura/RtP_Reading_Spanish_1.pdf">Beneficios
+                                        de la Lectura</a></li>!-->
+                                <li><a href="./subpages/trabaja_en_cas_en.php">Trabajar en CAS</a></li>
+
+                                <!-- <li><a href="https://cas.edu.gt/CAS/pages/aboutOurEducation/">Nuestra Educación</a></li> !-->
+                            </ul>
+                        </li>
+                        <li><a href="./subpages/admission_esp.html"
+                                class="text-gray-100 hover:text-yellow-500">Admisión</a></li>
+                        <li><a href="https://cas.edu.gt/2025/subpages/becas_en.php"
+                                class="text-gray-100 hover:text-yellow-500">Becas</a></li>
+                        <li><a href="./subpages/contact_esp.php"
+                                class="text-gray-100 hover:text-yellow-500">Contacto</a></li>
+                        <li class="relative">
+                            <a href="#" class="text-gray-100 hover:text-yellow-500">Estudiantes</a>
+                            <ul class="absolute left-0 top-full hidden bg-white shadow-md py-2 px-4 space-y-2 w-60 ">
+                                <li><a href="https://mail.google.com/mail/u/0/">Correo Electrónico</a></li>
+                                <li><a href="./subpages/calendar_esp.php">Calendario</a></li>
+                                <li><a href="https://americanodelsur.spadd.net/" target="_blanck">Uniformes</a></li>
+                                <li class="relative">
+                                    <a href="#" class="hover:text-yellow-500">Portales</a>
+                                    <ul class="absolute left-full top-0 hidden bg-white shadow-md py-2 px-4 space-y-2">
+                                        <li><a
+                                                href="https://sites.google.com/cas.edu.gt/portales-cas/EarlyChildhoodProgram">ECP</a>
+                                        </li>
+                                        <li><a
+                                                href="https://sites.google.com/cas.edu.gt/portales-cas/Elementary">Elementary</a>
+                                        </li>
+                                        <li><a
+                                                href="https://sites.google.com/cas.edu.gt/portales-cas/MiddleSchool">Middle School</a>
+                                        </li>
+                                        <li><a
+                                                href="https://sites.google.com/cas.edu.gt/portales-cas/Highschool">High School</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://www.thinkwave.com/secure/login/">Thinkwave</a></li>
+                                
+                                <!-- <li><a href="http://appmycas.cas.edu.gt/wellness/index.php">Bienestar 2024</a></li!>!-->
+                            </ul>
+                        </li>
+                        <li class="relative">
+                            <a href="#" class="text-gray-100 hover:text-yellow-500">Mi CAS</a>
+                            <ul class="absolute left-0 top-full hidden bg-white shadow-md py-2 px-4 space-y-2 w-60 ">
+                                <li class="relative">
+                                    <a href="#" class="hover:text-yellow-500">Anuario</a>
+                                    <ul class="absolute left-full top-0 hidden bg-white shadow-md py-2 px-4 space-y-2">
+                                         <li><a
+                                                href="https://heyzine.com/flip-book/48cbc35d7a.html" target="_blank">2024</a>
+                                        </li>
+                                        <li><a
+                                                href="https://www.cas.edu.gt/pages/yearbook/2023/yearbook_2023.pdf" target="_blank">2023</a>
+                                        </li>
+                                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2022/" target="_blank">2022</a></li>
+                                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2021/" target="_blank">2021</a></li>
+                                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2019/" target="_blank">2019</a></li>
+                                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2018/" target="_blank">2018</a></li>
+                                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2017/" target="_blank">2017</a></li>
+                                    </ul>
+                                </li>
+                                <li class="relative">
+                                    <a href="#" class="hover:text-yellow-500">Revista</a>
+                                    <ul class="absolute left-full top-0 hidden bg-white shadow-md py-2 px-4 space-y-2">
+                                        <li><a
+                                                href="https://heyzine.com/flip-book/5d3cc4625b.html" target="_blank">2024</a>
+                                        </li>
+                                        <li><a
+                                                href="https://www.cas.edu.gt/pages/Revista/2023/Revista_CAS_2023.pdf" target="_blank">2023</a>
+                                        </li>
+                                        <li><a
+                                                href="https://www.cas.edu.gt/pages/Revista/2021/mobile/index.html" target="_blank">2022</a>
+                                        </li>
+                                        <li><a href="https://www.cas.edu.gt/pages/Revista/2020/" target="_blank">2021</a></li>
+                                    </ul>
+                                </li>
+                                <li class="relative">
+                                    <a href="http://appmycas.cas.edu.gt/casNews/" class="hover:text-yellow-500">CAS News</a>
+
+                                </li>
+                                <li class="relative">
+                                    <a href="https://cas.edu.gt/appmycas.cas.edu.gt/honorSociety/index.php" class="hover:text-yellow-500">Honor Society</a>
+
+                                </li>
+                                <li class="relative">
+                                    <a href="https://cas.edu.gt/appmycas.cas.edu.gt/labSchool/index.php" class="hover:text-yellow-500">Lab School</a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="./subpages/manual_esp.html" class="text-gray-100 hover:text-yellow-500">Manuales</a></li>
+                        <li><a href="https://denuncias.etictel.com/?company=22295"
+                                class="text-gray-100 hover:text-yellow-500">Transparencia</a></li>
+                        <li class="relative">
+                            <a href="#" class="text-gray-100 hover:text-yellow-500">Valores</a>
+                            <ul class="absolute right-0 top-full hidden bg-white shadow-md py-2 px-4 space-y-2 w-60">
+                                <li><a href="https://www.fuvg.org.gt/programa_de_valores.php">Programa de Valores</a>
+                                </li>
+                                <li><a href="https://cas.edu.gt/assets/pdf/valores/codigo_etica_2025.pdf">Código de
+                                        Ética</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="mobile-menu" class="md:hidden absolute top-8 right-0 w-80 mt-5 z-50 hidden">
+        <!-- Académico -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Académico
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <li><a href="./subpages/research_projects_esp.html" class="hover:text-yellow-500">Proyectos de
+                        Investigación</a></li>
+                <li><a href="https://cas.edu.gt/docs/BeneficiosDeLectura/RtP_Reading_Spanish_1.pdf"
+                        class="hover:text-yellow-500">Beneficios de la Lectura</a></li>
+                <li><a href="https://cas.edu.gt/CAS/pages/workingInCAS/" class="hover:text-yellow-500">Trabajar en
+                        CAS</a></li>
+                <li><a href="https://cas.edu.gt/CAS/pages/aboutOurEducation/" class="hover:text-yellow-500">Nuestra
+                        Educación</a></li>
+            </ul>
+        </details>
+
+        <!-- Admisión -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Admisión
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <li><a href="./subpages/admission_esp.html" class="hover:text-yellow-500">Proceso de Admisión</a></li>
+            </ul>
+        </details>
+
+        <!-- Becas -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Becas
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <li><a href="https://cas.edu.gt/pages/becas/" class="hover:text-yellow-500">Opciones de Becas</a></li>
+            </ul>
+        </details>
+
+        <!-- Contacto -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Contacto
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <li><a href="./subpages/contact_esp.php" class="hover:text-yellow-500">Información de Contacto</a></li>
+            </ul>
+        </details>
+
+        <!-- Estudiante -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Estudiante
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <li><a href="https://mail.google.com/mail/u/0/" class="hover:text-yellow-500">Correo Electrónico</a>
+                </li>
+                <li><a href="https://americanodelsur.spadd.net/" class="hover:text-yellow-500">Uniformes</a></li>
+                <details>
+                    <summary class="hover:text-yellow-500">Portales</summary>
+                    <ul class="ml-4 space-y-4">
+                        <li><a href="https://sites.google.com/cas.edu.gt/portales-cas/EarlyChildhoodProgram"
+                                class="hover:text-yellow-500">ECP</a></li>
+                        <li><a href="https://sites.google.com/cas.edu.gt/portales-cas/Elementary"
+                                class="hover:text-yellow-500">Primaria</a></li>
+                        <li><a href="https://sites.google.com/cas.edu.gt/portales-cas/MiddleSchool"
+                                class="hover:text-yellow-500">Secundaria</a></li>
+                        <li><a href="https://sites.google.com/cas.edu.gt/portales-cas/Highschool"
+                                class="hover:text-yellow-500">Bachillerato</a></li>
+                    </ul>
+                </details>
+                <li><a href="https://www.thinkwave.com/secure/login/" class="hover:text-yellow-500">Thinkwave</a></li>
+                <li><a href="https://cas.edu.gt/pages/guides/" class="hover:text-yellow-500">Guías</a></li>
+                <li><a href="http://appmycas.cas.edu.gt/wellness/index.php" class="hover:text-yellow-500">Bienestar
+                        2024</a></li>
+            </ul>
+        </details>
+
+        <!-- Mi CAS -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Mi CAS
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <details>
+                    <summary class="hover:text-yellow-500">Anuario</summary>
+                    <ul class="ml-4 space-y-4">
+                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2023/yearbook_2023.pdf"
+                                class="hover:text-yellow-500">2023</a></li>
+                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2022/" class="hover:text-yellow-500">2022</a>
+                        </li>
+                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2021/" class="hover:text-yellow-500">2021</a>
+                        </li>
+                        <li><a href="https://www.cas.edu.gt/pages/yearbook/2019/" class="hover:text-yellow-500">2019</a>
+                        </li>
+                    </ul>
+                </details>
+                <details>
+                    <summary class="hover:text-yellow-500">Revista</summary>
+                    <ul class="ml-4 space-y-4">
+                        <li><a href="https://www.cas.edu.gt/pages/Revista/2023/Revista_CAS_2023.pdf"
+                                class="hover:text-yellow-500">2023</a></li>
+                        <li><a href="https://www.cas.edu.gt/pages/Revista/2021/mobile/index.html"
+                                class="hover:text-yellow-500">2022</a></li>
+                    </ul>
+                </details>
+                <li><a href="http://appmycas.cas.edu.gt/casNews/" class="hover:text-yellow-500">Noticias CAS</a></li>
+            </ul>
+        </details>
+
+        <!-- Transparencia -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Transparencia
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <li><a href="https://denuncias.etictel.com/?company=22295" class="hover:text-yellow-500">Denuncias</a>
+                </li>
+            </ul>
+        </details>
+
+        <!-- Valores -->
+        <details>
+            <summary class="bg-red-950 text-white hover:text-yellow-500 p-4 cursor-pointer shadow-md font-semibold">
+                Valores
+            </summary>
+            <ul class="space-y-4 bg-white p-4">
+                <li><a href="https://www.fuvg.org.gt/programa_de_valores.php" class="hover:text-yellow-500">Programa de
+                        Valores</a></li>
+                <li><a href="https://cas.edu.gt/assets/pdf/valores/10012025 Coìdigo de Eìtica GEV.p"
+                        class="hover:text-yellow-500">Código de Ética</a></li>
+            </ul>
+        </details>
+    </div>
+
+
+
+    <!-- Script para el funcionamiento del menú -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggle = document.querySelectorAll('.relative');
+
+            dropdownToggle.forEach(item => {
+                const link = item.querySelector('a');
+                if (link) {
+                    // Mostrar submenú en mouseenter
+                    link.addEventListener('mouseenter', function () {
+                        const submenu = item.querySelector('ul');
+                        if (submenu) {
+                            submenu.classList.remove('hidden');
+                        }
+                    });
+                }
+
+                // Ocultar submenú en mouseleave
+                item.addEventListener('mouseleave', function () {
+                    const submenu = item.querySelector('ul');
+                    if (submenu) {
+                        submenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Manejar el evento clic en el botón del menú móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                console.log("¡Se ha presionado el botón del menú móvil!");
+            });
+        });
+    </script>
+    <!-- Botón flotante de idioma 
+    <div class="fixed bottom-8 left-8 z-50">
+        <a href="./index.html" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+            Inglés
+        </a>
+    </div>-->
+
+    <!-- Portada -->
+    <div class="main-content h-screen">
+        <div id="indicators-carousel" class="relative w-full h-full" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative h-full overflow-hidden">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                    <div class="absolute inset-0">
+                        <img src="./src/img/carousel-1.webp" class="absolute inset-0 w-full h-full object-cover"
+                            alt="...">
+                        <div class="bg-black absolute inset-0 opacity-50"></div> <!-- Capa con filtro negro -->
+
+                    </div>
+                    <div
+                        class="carousel-caption absolute inset-0 flex flex-col items-center justify-center text-center">
+                        <h2
+                            class="text-lg md:text-xl lg:text-4xl text-primary text-white font-weight-medium shadow-md m-0">
+                            Forjando mentes brillantes</h2>
+                        <h1 class="text-xl md:text-2xl lg:text-6xl text-yellow-500 font-bold shadow-md m-0">SOMOS CAS
+                        </h1>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="absolute inset-0">
+                        <img src="./src/img/carousel-2.webp" class="absolute inset-0 w-full h-full object-cover"
+                            alt="...">
+                        <div class="bg-black absolute inset-0 opacity-50"></div> <!-- Capa con filtro negro -->
+                    </div>
+                    <div
+                        class="carousel-caption absolute inset-0 flex flex-col items-center justify-center text-center">
+                        <h2
+                            class="text-lg md:text-xl lg:text-4xl text-primary text-white font-weight-medium shadow-md m-0">
+                            El aprendizaje cobra vida</h2>
+                        <h1 class="text-xl md:text-2xl lg:text-6xl text-yellow-500 font-bold shadow-md m-0">SOMOS CAS
+                        </h1>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="absolute inset-0">
+                        <img src="./src/img/carousel-3.webp" class="absolute inset-0 w-full h-full object-cover"
+                            alt="...">
+                        <div class="bg-black absolute inset-0 opacity-50"></div> <!-- Capa con filtro negro -->
+                    </div>
+                    <div
+                        class="carousel-caption absolute inset-0 flex flex-col items-center justify-center text-center">
+                        <h2
+                            class="text-lg md:text-xl lg:text-4xl text-primary text-white font-weight-medium shadow-md m-0">
+                            Abriendo puertas al futuro</h2>
+                        <h1 class="text-xl md:text-2xl lg:text-6xl text-yellow-500 font-bold shadow-md m-0">SOMOS CAS
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                <button type="button" class="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full" aria-current="true"
+                    aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full" aria-current="false"
+                    aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full" aria-current="false"
+                    aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button"
+                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+
+                <svg class="w-6 h-6 md:w-6 md:h-6 lg:w-10 lg:h-10 text-white text-white-800 rtl:rotate-180"
+                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button"
+                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next>
+
+                <svg class="w-6 h-6 md:w-6 md:h-6 lg:w-10 lg:h-10 text-white text-white-800 rtl:rotate-180"
+                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Seccion mas sobre nosotros -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-12">
+            <!-- Línea vertical -->
+            <div class="w-1 h-12 bg-yellow-500 mx-auto mb-2"></div>
+            <div class="flex flex-col items-center justify-center">
+                <!-- Título -->
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl text-yellow-500" data-aos="zoom-in">Sobre nosotros</h2>
+                    <h1 class="text-5xl text-red-950 font-bold" data-aos="zoom-in">Sirviendo desde 1995</h1>
+                    <p class="text-1.8xl text-red-950 mt-4" data-aos="zoom-in">Con el propósito de ayudar a encontrar
+                        soluciones a los problemas del país, se crearon
+                        CAS y Campus Sur para fortalecer el campo educativo. CAS fue autorizado por el Ministerio de
+                        Educación en enero de 1995, brindando flexibilidad en sus procedimientos y programas, lo que
+                        permite
+                        el desarrollo del currículo y la evaluación, así como la formación de docentes. CAS ha brindado
+                        excelencia académica durante más de 25 años para mejorar la educación en Guatemala.</p>
+                </div>
+                <!-- Columnas en dispositivos móviles -->
+                <div class="flex flex-col md:flex-row justify-center items-center">
+                    <!-- Columna 1 -->
+                    <div class="w-full md:w-1/3 text-left px-4 mb-8 md:mb-0">
+                        <h3 class="text-4xl text-red-950 font-bold mb-4" data-aos="zoom-in">Nuestra Misión</h3>
+                        <p class="text-gray-600 mb-4" data-aos="zoom-in">Educar y guiar a estudiantes bilingües en el
+                            desarrollo de sus valores, intereses, destrezas académicas y sociales, proporcionándoles las
+                            herramientas para ser profesionales preparados y ciudadanos comprometidos con sus
+                            comunidades y el medio ambiente, y creando un impacto positivo en el mundo.
+                        </p>
+                      <!--  <button class="bg-red-800 text-white px-4 py-2 rounded" data-aos="zoom-in">Más
+                            información</button>-->
+                    </div>
+                    <!-- Columna 2 (Círculo) -->
+                    <div class="relative flex justify-center items-center w-full md:w-1/3 mb-8 md:mb-0">
+                        <div class="w-64 h-64 md:w-80 md:h-80 lg:w-60 lg:h-60 rounded-full overflow-hidden">
+                            <img class="w-full h-full object-cover" src="./src/img/bg_circulo.webp" alt="About Image">
+                        </div>
+                    </div>
+                    <!-- Columna 3 -->
+                    <div class="w-full md:w-1/3 text-left px-4">
+                        <h3 class="text-4xl text-red-950 font-bold mb-4" data-aos="zoom-in">Nuestra Visión</h3>
+                        <p class="text-gray-600 mb-4" data-aos="zoom-in">Ser la institución educativa líder en la Costa
+                            Sur de Guatemala, que provee a los estudiantes una experiencia académica de calidad que los
+                            prepara para la educación universitaria y ciudadanía global, contribuyendo al desarrollo de
+                            la innovación educativa en la región.
+                        </p>
+                         <!-- <button class="bg-yellow-500 text-white px-4 py-2 rounded" data-aos="zoom-in">Más
+                            información</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Definición de aprendizaje -->
+    <section class="py-16 bg-white relative">
+        <!-- Div para la imagen de fondo con filtro -->
+        <div class="bg-cover bg-center h-full w-full absolute top-0 left-0 filter brightness-50"
+            style="background-image: url('./src/img/bg_definition_of_learning.webp');"></div>
+
+        <div class="container mx-auto relative">
+            <div class="flex flex-col items-center px-12 justify-center relative">
+                <!-- Título -->
+                <div class="text-center mb-8 relative z-10">
+                    <h2 class="text-5xl text-yellow-500 font-bold " data-aos="zoom-in">Definición del aprendizaje</h2>
+                    <p class="text-1.8xl text-white mt-4" data-aos="zoom-in">El aprendizaje en el CAS es un proceso de
+                        transformación
+                        en el que se adquieren conocimientos, se despierta la conciencia y se obtienen habilidades que
+                        empoderan
+                        a los estudiantes para mejorar y comprometerse de lleno con sus comunidades, su país y el mundo
+                        a través
+                        de pensamiento crítico, solución de problemas y colaboración. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección iniciativas-->
+    <div class="container-fluid pt-5">
+        <div class="container mx-auto px-12"> <!-- Modificado px-8 para un espaciado más grande -->
+            <!-- Línea vertical -->
+            <div class="w-1 h-12 bg-yellow-500 mx-auto mb-2"></div>
+            <div class="flex flex-col items-center justify-center">
+                <!-- Título -->
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl text-yellow-500 font-bold">Nuestras iniciativas</h2>
+                    <p class="text-1.8xl text-red-950 mt-4">Con la finalidad de preparar líderes bilingües con
+                        pensamiento crítico y comprometidos
+                        con el desarrollo de su comunidad, contamos con la mejor experiencia de calidad que los prepara
+                        para
+                        la educación universitaria y ciudadanía global.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Columna 1 -->
+                <div class="mb-5" data-aos="zoom-in">
+                    <!-- Subsección 1 -->
+                    <div class="flex items-center mb-4">
+                        <div class="w-1/3">
+                            <img class="w-full mb-3 sm:mb-0 rounded-full" src="./src/img/service-1.webp" alt="">
+                        </div>
+                        <div class="w-2/3 ml-4">
+                            <h4 class="flex items-center font-bold">AJEDREZ</h4>
+                            <p class="m-0">CAS promueve el ajedrez dentro de clubes para niños de 4to grado en
+                                adelante, y también se ofrece como una actividad extraescolar para padres y maestros.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Subsección 2 -->
+                    <div class="flex items-center mb-4" data-aos="zoom-in">
+                        <div class="w-1/3">
+                            <img class="w-full mb-3 sm:mb-0 rounded-full" src="./src/img/service-2.webp" alt="">
+                        </div>
+                        <div class="w-2/3 ml-4">
+                            <h4 class="flex items-center font-bold">ROBOTICA</h4>
+                            <p class="m-0">La propuesta ideal para aprender jugando y potenciar la creatividad,
+                                desarrollar la lógica matemática, la organización espacial, la direccionalidad y el
+                                pensamiento creativo.</p>
+                        </div>
+                    </div>
+                    <!-- Subsección 3 -->
+                    <div class="flex items-center mb-4" data-aos="zoom-in">
+                        <div class="w-1/3">
+                            <img class="w-full mb-3 sm:mb-0 rounded-full" src="./src/img/service-3.webp" alt="">
+                        </div>
+                        <div class="w-2/3 ml-4">
+                            <h4 class="flex items-center font-bold">NEWSELA</h4>
+                            <p class="m-0">Una poderosa herramienta de aprendizaje con instrucción personalizada que
+                                proporciona recursos de lectura exclusivos.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna 2 -->
+                <div class="mb-5" data-aos="zoom-in">
+                    <!-- Subsección 4 -->
+                    <div class="flex items-center mb-4">
+                        <div class="w-1/3">
+                            <img class="w-full mb-3 sm:mb-0 rounded-full" src="./src/img/service-4.webp" alt="">
+                        </div>
+                        <div class="w-2/3 ml-4">
+                            <h4 class="flex items-center font-bold">KHAN ACADEMY</h4>
+                            <p class="m-0">Un recurso virtual destinado a desarrollar o enriquecer el aprendizaje en
+                                materias como
+                                como matemáticas, química y programación. El alumno aprende a su propio ritmo, y
+                                proporciona información valiosa al profesor sobre el progreso de sus alumnos.</p>
+                        </div>
+                    </div>
+                    <!-- Subsección 5 -->
+                    <div class="flex items-center mb-4" data-aos="zoom-in">
+                        <div class="w-1/3">
+                            <img class="w-full mb-3 sm:mb-0 rounded-full" src="./src/img/service-5.webp" alt="">
+                        </div>
+                        <div class="w-2/3 ml-4">
+                            <h4 class="flex items-center font-bold">REUNIÓN
+                                MATUTINA
+                            </h4>
+                            <p class="m-0">Un espacio de 20 minutos por la mañana donde los estudiantes pueden
+                                reunirse con su maestro guía para discutir los próximos eventos, los valores de CAS y
+                                también participar en la lectura en silencio o en grupo. Es un momento para organizarse
+                                y prepararse para un día de aprendizaje.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sección programa-->
+    <!-- Sección del programa -->
+
+    <div class="w-1 h-12 bg-yellow-500 mx-auto mb-2"></div>
+    <div class="flex flex-col items-center justify-center">
+        <!-- Título -->
+        <div class="text-center mb-8" data-aos="zoom-out">
+            <h2 class="text-3xl text-yellow-500">Nuestros programas</h2>
+
+        </div>
+    </div>
+    <div class="section mx-8 rounded-lg" style="height: 400px">
+        <div id="imageContainer" class="flex justify-center gap-0">
+            <!-- Estructura para ECP (Prekínder y Kínder) -->
+            <div class="relative overflow-hidden zoom-container" style="width: 25%; height: 400px;">
+                <h1
+                    class="text-center text-3xl font-bold absolute inset-x-0 top-1/2 -translate-y-1/2 text-yellow-400 z-10 transition-transform">
+                    ECP</h1>
+                <img src="./src/img/programas/ecp.webp" alt="ECP"
+                    class="w-full h-full object-cover filter bg-black bg-opacity-50 hover:filter-none transition duration-300 filter brightness-50 border-2 rounded-l-lg" />
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 z-20">
+                    <p class="text-white text-sm px-4 py-2 rounded-lg hidden md:block">Ofrecemos educación de alta
+                        calidad para pre-kinder, kinder y grado 1. Priorizamos la paciencia, supervisión y apoyo para
+                        ayudar a los niños en la adaptación y el desarrollo de habilidades. Nuestros objetivos incluyen
+                        fomentar la independencia, la confianza y la adaptabilidad social.</p>
+                    <p class="text-white text-sm px-4 py-2 rounded-lg md:hidden">Fomentamos la independencia y la
+                        confianza mientras preparamos a los niños para la educación primaria.</p>
+                </div>
+            </div>
+            <!-- Repite esta estructura para las otras imágenes -->
+
+            <!-- Estructura para la Primaria -->
+            <div class="relative overflow-hidden zoom-container" style="width: 25%; height: 400px;">
+                <h1
+                    class="text-center text-3xl font-bold absolute inset-x-0 top-1/2 -translate-y-1/2 text-yellow-400 z-10 transition-transform">
+                    Primaria</h1>
+                <img src="./src/img/programas/elementary.webp" alt="Primaria"
+                    class="w-full h-full object-cover filter  hover:filter-none transition duration-300 filter brightness-50 border-2" />
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 z-20">
+                    <p class="text-white text-sm px-4 py-2 rounded-lg hidden md:block">La educación primaria abarca los
+                        grados uno a cinco. El plan de estudios se centra en la alfabetización bilingüe en los grados
+                        uno y dos, y en habilidades básicas de lectura y escritura en ambos idiomas desde los grados
+                        tres a cinco. Los programas de apoyo están disponibles desde el grado dos para los estudiantes
+                        que lo necesiten.</p>
+                    <p class="text-white text-sm px-4 py-2 rounded-lg md:hidden">Fomentar habilidades bilingües básicas
+                        y ofrecer apoyo de recuperación según sea necesario.</p>
+                </div>
+            </div>
+            <!-- Repite esta estructura para las otras imágenes -->
+
+            <!-- Estructura para la Escuela Intermedia -->
+            <div class="relative overflow-hidden zoom-container" style="width: 25%; height: 400px;">
+                <h1
+                    class="text-center text-3xl font-bold absolute inset-x-0 top-1/2 -translate-y-1/2 text-yellow-400 z-10 transition-transform">
+                    Escuela Intermedia</h1>
+                <img src="./src/img/programas/middle.webp" alt="Escuela Intermedia"
+                    class="w-full h-full object-cover filter bg-black bg-opacity-50 hover:filter-none transition duration-300 filter brightness-50 border-2" />
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 z-20">
+                    <p class="text-white text-sm px-4 py-2 rounded-lg hidden md:block">La escuela intermedia (grados
+                        6-8) tiene como objetivo despertar el interés por el aprendizaje y la investigación. Un programa
+                        de asesoramiento apoya a los estudiantes durante la adolescencia, preparándolos para la escuela
+                        secundaria con independencia y competencia académica en ambos idiomas. Los estudiantes tienen 3
+                        horas diarias de instrucción en inglés y acceso a programas de tutoría y deportes.</p>
+                    <p class="text-white text-sm px-4 py-2 rounded-lg md:hidden">Despertar el interés por el aprendizaje
+                        y preparar a los estudiantes para la escuela secundaria.</p>
+                </div>
+            </div>
+            <!-- Repite esta estructura para las otras imágenes -->
+
+            <!-- Estructura para la Escuela Secundaria -->
+            <div class="relative overflow-hidden zoom-container" style="width: 25%; height: 400px;">
+                <h1
+                    class="text-center text-3xl font-bold absolute inset-x-0 top-1/2 -translate-y-1/2 text-yellow-400 z-10 transition-transform ">
+                    Escuela Secundaria</h1>
+                <img src="./src/img/programas/high.webp" alt="Escuela Secundaria"
+                    class="w-full h-full object-cover filter bg-black bg-opacity-50 hover:filter-none transition duration-300 filter brightness-50 border-2 rounded-r-lg" />
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 z-20">
+                    <p class="text-white text-sm px-4 py-2 rounded-lg hidden md:block">La misión de la escuela
+                        secundaria es cultivar aprendices continuos en un ambiente de respeto y confianza. Se motiva a
+                        los estudiantes a alcanzar metas académicas, sociales y vocacionales. Participan en varios
+                        deportes, con la oportunidad de competir internacionalmente, fomentando los viajes y el
+                        intercambio cultural en América Central.</p>
+                    <p class="text-white text-sm px-4 py-2 rounded-lg md:hidden">Cultivar aprendices continuos y
+                        promover metas académicas, sociales y vocacionales.</p>
+                </div>
+            </div>
+            <!-- Repite esta estructura para las otras imágenes -->
+        </div>
+    </div>
+
+
+    <!-- Valores-->
+    <div class="container mx-auto my-12 lg:w-full xl:w-full">
+        <div class="w-1 h-12 bg-red-900 mx-auto mb-2"></div>
+        <div class="flex justify-center">
+            <div class="w-full lg:w-3/4 xl:w-2/3">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl text-red-950 font-bold">Nuestros valores</h2>
+                    <p class="text-1.8xl text-red-950 mt-4">
+                        Estos valores fundamentales guían nuestra misión y nos inspiran a ser la mejor versión de
+                        nosotros mismos mientras nos esforzamos por marcar la diferencia en el mundo que nos rodea.
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- Card 1 -->
+                    <div class="w-1/6 bg-white shadow-md p-2 rounded-lg relative">
+                        <img src="./src/img/valores/v-1.webp" class="w-full h-full rounded-lg object-cover"
+                            alt="Card 1">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
+                            <h3 class="text-white">Confianza</h3>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="w-1/6 bg-white shadow-md p-2 rounded-lg relative">
+                        <img src="./src/img/valores/v-2.webp" class="w-full h-full rounded-lg object-cover"
+                            alt="Card 2">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
+                            <h3 class="text-white">Responsabilidad</h3>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="w-1/6 bg-white shadow-md p-2 rounded-lg relative">
+                        <img src="./src/img/valores/v-3.webp" class="w-full h-full rounded-lg object-cover"
+                            alt="Card 3">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
+                            <h3 class="text-white">Respeto</h3>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="w-1/6 bg-red-100 shadow-lg p-3 rounded-lg relative">
+                        <img src="./src/img/valores/v-4.webp" class="w-full h-full rounded-lg object-cover"
+                            alt="Card 4">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
+                            <h3 class="text-white">Innovación</h3>
+                            <h3 class="text-white">y</h3>
+                            <h3 class="text-white">Emprendimiento</h3>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="w-1/6 bg-white shadow-md p-2 rounded-lg relative">
+                        <img src="./src/img/valores/v-5.webp" class="w-full h-full rounded-lg object-cover"
+                            alt="Card 5">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
+                            <h3 class="text-white">Compromiso</h3>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="w-1/6 bg-white shadow-md p-2 rounded-lg relative">
+                        <img src="./src/img/valores/v-6.webp" class="w-full h-full rounded-lg object-cover"
+                            alt="Card 6">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
+                            <h3 class="text-white">Pensamiento crítico</h3>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="w-1/6 bg-white shadow-md p-2 rounded-lg relative">
+                        <img src="./src/img/valores/v-7.webp" class="w-full h-full rounded-lg object-cover"
+                            alt="Card 7">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
+                            <h3 class="text-white">Ética y excelencia</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección contacta con nosotros-->
+    <div class="my-12">
+        <div class="w-1 h-12 bg-yellow-500 mx-auto mb-2"></div>
+        <div class="border-primary w-full">
+            <div class="reservation position-relative">
+                <div class="lg:flex justify-center">
+                    <!-- Columna sin imagen de fondo -->
+                    <div class="lg:w-full">
+                        <div class="p-5 relative z-10 text-center">
+                            <div class="mb-4">
+                                <h1 class="text-5xl display-3 text-yellow-500 font-bold">Visítanos</h1>
+                            </div>
+                            <!-- Mapa de ubicación -->
+                            <div class="mt-4 flex justify-center items-center" style="max-width: 100%; height: 300px;">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.663274774293!2d-91.0624!3d14.3304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589262aa575f969%3A0xec60bceaf5a0a4e6!2sAmerican%20College%20South!5e0!3m2!1sen!2sgt!4v1643762161132!5m2!1sen!2sgt"
+                                    width="90%" height="90%" style="border:0; max-width: 100%;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin de la columna sin imagen de fondo -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Footer -->
+    <section>
+        <div
+            class="container-fluid bg-footer-background bg-cover bg-center text-white mt-5 pt-5 pb-10 px-4 lg:px-8 mx-auto flex justify-center items-center relative">
+            <!-- Div para la imagen de fondo con filtro -->
+            <div class="bg-cover bg-center h-full w-full absolute top-0 left-0 filter brightness-50"
+                style="background-image: url('./src/img/bg.webp');"></div>
+
+            <div class="container mx-auto relative">
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                    <!-- Columnas de contenido -->
+                    <!-- Columna 1 -->
+                    <div class="mb-8">
+                        <h4 class="text-lg font-bold mb-4">Colegio Americano del Sur</h4>
+                        <!-- Resto del contenido de la columna 1 -->
+                        <p>Km 92.5 Finca Camantulul Santa Lucia Cotz. Escuintla,
+                            Guatemala, C.A.</p>
+                        <p>PBX CAS:<br>+502 4636-1832</p>
+                        <p class="mb-0">Campus Sur UVG +502 7955-2800</p>
+                    </div>
+                    <!-- Columna 2 -->
+                    <div class="mb-8">
+                        <h4 class="text-lg font-bold mb-4">Grupo Educativo del Valle</h4>
+                        <!-- Resto del contenido de la columna 2 -->
+                        <a href="http://www.fuvg.org.gt/">- Fundación UVG</a><br>
+                        <a href="http://www.uvg.edu.gt/">- Universidad del valle de Guatemala</a><br>
+                        <a href="https://altiplano.uvg.edu.gt/">- Universidad del valle Altiplano</a><br>
+                        <a href="http://www.cag.edu.gt/">- Colegio Americano de Guatemala</a><br>
+
+
+                    </div>
+                    <!-- Columna 3 -->
+                    <div class="mb-8">
+                        <h4 class="text-lg font-bold mb-4">Horarios de apertura</h4>
+                        <!-- Resto del contenido de la columna 3 -->
+                        <div>
+                            <h6 class="text-lg font-bold">Lunes - Viernes</h6>
+                            <p>7.00 AM - 3.30 PM</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Button Whatsapp Structure -->
+    <div class="whatsapp_chat_support wcs_fixed_right " id="button-w">
+        <div class="wcs_button_label">
+            Contáctanos
+        </div>
+        <div class="wcs_button wcs_button_circle "  >
+
+            <img src="./src/img/wp_icon.webp" alt="Logo CAS" style="width: 80%; height: 80%; margin-left: 5px" />
+
+        </div>
+
+        <div class="wcs_popup">
+            <div class="wcs_popup_close">
+                <span class="fa fa-close"></span>
+            </div>
+            <div class="wcs_popup_header">
+                <span class="fa fa-whatsapp"></span>
+                <strong>Admninistración CAS</strong>
+
+                <div class="wcs_popup_header_description">¿Necesitas ayuda? Chatea con nosotros en Whatsapp</div>
+
+            </div>
+            <div class="wcs_popup_input" data-number="+50246361832"
+                data-availability='{ "monday":"07:00-15:30", "tuesday":"07:00-15:30", "wednesday":"07:7030-15:30", "thursday":"07:00-15:30", "friday":"07:00-15:30" }'>
+                <input type="text" placeholder="Escribir pregunta!" />
+                <i class="fa fa-play"></i>
+            </div>
+            <!-- <div class="wcs_popup_avatar">
+                <img src="https://avatars.githubusercontent.com/janl?s=180" alt="">
+            </div>-->
+        </div>
+    </div>
+
+
+    <script src="./plugin/components/jQuery/jquery-1.11.3.min.js"></script>
+
+    <script src="./plugin/components/moment/moment.min.js"></script>
+    <script src="./plugin/components/moment/moment-timezone-with-data.min.js"></script>
+    <!-- spanish language (es) -->
+    <script src="./plugin/whatsapp-chat-support.js"></script>
+    <script>
+
+        $('#button-w').whatsappChatSupport({
+            defaultMsg: '',
+        });
+    </script>
+
+    <!-- JavaScript -->
+    <script src="./src/js/programas.js"></script>
+    <script src="./src/js/navbar.js"></script>
+    <script src="./src/js/carrousel.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+
+        AOS.init();
+    </script>
+
 </body>
+
 </html>
