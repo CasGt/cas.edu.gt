@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+ <script src="../src/js/capturarAnio.js"></script>
+</head>
+
+<body class="bg-white text-gray-900 font-sans">
+    <header class="py-8">
+        <div class="flex items-center justify-between px-8">
+
+            <img src="../src/img/logo_cas_red.webp" alt="Colegio Americano Logo" class="h-8">
+            <a href="../index.html" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Regresar</a>
+        </div>
+
+        <div class="text-center mt-4">
+            <hr class="mt-4 border-t-2 border-gray-300">
+            <h1 class="py-4 text-2xl font-bold">ADMISIONES CAS <span id="year"></span></h1>
+        </div>
+    </header>
+    <main id="main">
+<!--
+        <div id="myModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg shadow-lg w-11/12 max-w-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">¡Atención!</h2>
+                <p>Aún no están activas las inscripciones y reinscripciones, pero pronto lo estarán. ¡Mantente atento a
+                    nuestras actualizaciones!</p>
+                <button id="closeModal"
+                    class="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Cerrar</button>
+            </div>
+        </div> !-->
+
+        <section id="features">
+            <div class="container mx-auto px-16">
+                <div class="text-center mb-8">
+                    <p>Recuerda que debes completar algunos <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php"
+                            class="text-indigo-600 hover:underline">procedimientos</a> para nuevo ingreso.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row lg:space-x-8">
+                    <div class="lg:w-1/4 mb-8 lg:mb-0">
+                        <ul class="space-y-4">
+                            <li>
+                                <a class="block p-4 border rounded-lg hover:bg-indigo-50" href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php">
+                                    <h4 class="text-lg font-medium">Procedimiento</h4>
+                                    <p class="text-sm text-gray-600">Revisa aquí el procedimiento para inscripciones</p>
+                                </a>
+                            </li>
+                            <li>
+                                <!-- <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php"  id="newIngreso"</a> class="block p-4 border rounded-lg hover:bg-indigo-50"> !-->
+                                 <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php" class="block p-4 border rounded-lg hover:bg-indigo-50"> 
+                                    <h4 class="text-lg font-medium">Nuevo Ingreso</h4>
+                                    <p class="text-sm text-gray-600">Completa aquí el formulario para formar parte de
+                                        nuestra familia.</p>
+                                </a>
+                            </li>
+                            <li>
+                               <!-- <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php" id="reinscripcion" class="block p-4 border rounded-lg hover:bg-indigo-50"> -->
+                               <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php" class="block p-4 border rounded-lg hover:bg-indigo-50">
+                                    <h4 class="text-lg font-medium">Re-Inscripción</h4>
+                                    <p class="text-sm text-gray-600">Si ya tienes tu usuario y contraseña, ingresa aquí
+                                        para inscribirte en el ciclo <span id="year"></span>.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="mb-6">
+                            <figure>
+                                  <img src="../src/img/admission/admisiones_2024.jpg" alt=""
+                                    class="w-full rounded-lg shadow-lg">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="procedimiento" class="py-8 bg-red-900 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Procedimiento para aplicar a <strong>nuevo</strong> ingreso</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-red-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <div class="flex justify-center mb-4">
+                            <i class="icofont-building-alt text-4xl text-red-300"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center text-black">Contacto/información</h4>
+                        <p class="text-sm text-gray-700 mt-2">Para iniciar el proceso deben comunicarse a secretaría del
+                            colegio para concertar una cita y conocer las instalaciones.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-red-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <div class="flex justify-center mb-4">
+                            <i class="icofont-law-document text-4xl text-black"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center text-black">Pruebas de admisión</h4>
+                        <p class="text-sm text-gray-700 mt-2">Calendarizar en secretaría del CAS, la fecha que el
+                            estudiante puede asistir a pruebas de admisión. (Pruebas aplicadas: Español, Matemática e
+                            Inglés).</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-red-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <div class="flex justify-center mb-4">
+                            <i class="icofont-learn text-4xl text-red-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center text-black">Pre-Kinder</h4>
+                        <p class="text-sm text-gray-700 mt-2">Para ser admitidos en Pre-Kinder 1 los estudiantes deben
+                            tener 3 años cumplidos, como mínimo. Los estudiantes de ingreso a Pre-Kinder y Kinder, son
+                            admitidos después de una entrevista con los padres de familia.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-red-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <div class="flex justify-center mb-4">
+                            <i class="icofont-school-bag text-4xl text-red-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center text-black">Grado 1 a 12</h4>
+                        <p class="text-sm text-gray-700 mt-2">Deben realizar pruebas de admisión que se calendarizan con
+                            previa cita.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-red-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <div class="flex justify-center mb-4">
+                            <i class="icofont-read-book text-4xl text-red-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center text-black">Admisión Aprobada</h4>
+                        <p class="text-sm text-gray-700 mt-2">Si el estudiante aprueba los exámenes de admisión, los
+                            padres procederán a completar la papelería correspondiente y completar el <a href="#"
+                                id="newIngreso" class="text-red-600 hover:underline">formulario de inscripción</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="proceso-inscripcion" class="py-8 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-semibold">Proceso de Inscripción</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <h4 class="text-lg font-medium mb-4">Paso 1: Solicitud</h4>
+                        <p class="text-sm text-gray-600">Completa el formulario de solicitud de inscripción disponible
+                            en el sitio web.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <h4 class="text-lg font-medium mb-4">Paso 2: Entrevista</h4>
+                        <p class="text-sm text-gray-600">Coordina una entrevista con el personal administrativo del
+                            colegio.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <h4 class="text-lg font-medium mb-4">Paso 3: Evaluación</h4>
+                        <p class="text-sm text-gray-600">El estudiante deberá presentar una evaluación académica según
+                            el grado al que aplica.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <h4 class="text-lg font-medium mb-4">Paso 4: Resultados</h4>
+                        <p class="text-sm text-gray-600">Los resultados de la evaluación serán enviados vía correo
+                            electrónico.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <h4 class="text-lg font-medium mb-4">Paso 5: Inscripción Final</h4>
+                        <p class="text-sm text-gray-600">Si los resultados son favorables, completa la inscripción
+                            entregando la documentación requerida.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="requisitos-inscripcion" class="py-8 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-semibold">Requisitos de Inscripción</h2>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-black">Estudiante Nacional</h3>
+                    <table class="table-auto w-full bg-white shadow-lg rounded-lg border border-gray-200">
+                        <tbody class="text-gray-600">
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Llenar el formulario a través de la página web del colegio.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Presentar Ficha de recomendación de la institución en donde
+                                    estudió anteriormente. (El formato se da en CAS).</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Completar el formulario de Aceptación y Convenio de Pago que se
+                                    entrega en secretaría.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Completar el Contrato de Adhesión por prestación de servicios
+                                    educativos (DIACO).</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Copia de tarjeta de calificaciones del año en curso.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Certificados de estudios extendidos por la dirección del colegio
+                                    en donde estudió (Ministerio de Educación).</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Constancia de SOLVENCIA de pagos extendida por la dirección de la
+                                    institución en donde estudió.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Certificación de nacimiento en original y reciente.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2">Certificación médica y esquema de vacunas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-black">Estudiante Extranjero</h3>
+                    <table class="table-auto w-full bg-white shadow-lg rounded-lg border border-gray-200">
+                        <tbody class="text-gray-600">
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Llenar los formularios a través de la página web del colegio.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Completar el formulario de aceptación y convenio de pago que se
+                                    entrega en secretaría.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Certificación de nacimiento original.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Certificación médica y esquema de vacunas.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Copia de tarjeta de calificaciones.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Certificados de estudios de años anteriores (boleta de
+                                    calificaciones) firmados y sellados por:</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-8 py-2">1. Distrito de educación del estado al que pertenece el
+                                    establecimiento (en el extranjero).</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-8 py-2">2. Embajada de Guatemala del estado en el que residía el
+                                    estudiante (en el extranjero).</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-8 py-2">3. Ministerio de Relaciones Exteriores en Guatemala.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-black">Padres o Encargados de Estudiante</h3>
+                    <table class="table-auto w-full bg-white shadow-lg rounded-lg border border-gray-200">
+                        <tbody class="text-gray-600">
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Constancia laboral con ingresos de padres de familia o Copia de
+                                    Patente de Comercio con carta de ingresos del contador.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Copia de últimos tres estados de cuenta bancaria.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Copia de Documento Personal de Identificación (DPI) de ambos
+                                    padres.</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">Copia del carné de NIT (Padre encargado de la cuenta).</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-300 transition-colors">
+                                <td class="px-4 py-2">1 Carta de recomendación por parte de padres de CAS.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2">1 Carta de recomendación por persona ajena a CAS.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <h4 class="text-lg font-medium mb-4">Firma de Convenios</h4>
+                        <p class="text-sm text-gray-600">Firmar en secretaría del colegio la ficha de aceptación de
+                            reglas y procedimientos y convenio de pago. Completar el formulario de Aceptación y Convenio
+                            de Pago que se entrega en secretaría.</p>
+                    </div>
+
+
+                    <div
+                        class="p-6 bg-white shadow-lg rounded-lg border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <h4 class="text-lg font-medium mb-4">Pago de Matrícula</h4>
+                        <p class="text-sm text-gray-600">Cancelar en caja el pago de matrícula de inscripción y apoyo
+                            educativo antes del 30 de septiembre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-6 text-center text-gray-500">
+        <span id="year"></span> Colegio Americano del Sur
+    </footer>
+    
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const newIngresoLink = document.getElementById('newIngreso');
+        const reinscripcionLink = document.getElementById('reinscripcion');
+        const modal = document.getElementById('myModal');
+        const closeModal = document.getElementById('closeModal');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+        }
+
+        function closeModalFn() {
+            modal.classList.add('hidden');
+        }
+
+        newIngresoLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            openModal();
+        });
+
+        reinscripcionLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            openModal();
+        });
+
+        closeModal.addEventListener('click', closeModalFn);
+
+        // Optionally, close modal when clicking outside of it
+        window.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModalFn();
+            }
+        });
+    });
+</script>
+</body>
+
+
+</html>

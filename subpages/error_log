@@ -1,0 +1,42 @@
+[17-Sep-2024 06:12:08 UTC] PHP Warning:  include(../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:12:08 UTC] PHP Warning:  include(): Failed opening '../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:12:08 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:12:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:05 UTC] PHP Warning:  include(../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:05 UTC] PHP Warning:  include(): Failed opening '../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:05 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:05 UTC] PHP Warning:  include(../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:05 UTC] PHP Warning:  include(): Failed opening '../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:05 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:07 UTC] PHP Warning:  include(../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:07 UTC] PHP Warning:  include(): Failed opening '../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:07 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:09 UTC] PHP Warning:  include(../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:09 UTC] PHP Warning:  include(): Failed opening '../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:09 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:10 UTC] PHP Warning:  include(../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:10 UTC] PHP Warning:  include(): Failed opening '../../../appmycas.cas.edu.gt/admin_docentes/model/conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 6
+[17-Sep-2024 06:13:10 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14
+[17-Sep-2024 06:13:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/subpages/contact_en.php on line 14

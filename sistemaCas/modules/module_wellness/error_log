@@ -1,0 +1,116 @@
+[13-Jan-2025 05:54:54 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 05:54:54 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 05:54:54 UTC] PHP Warning:  Undefined variable $conn in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/ver_wellness.php on line 44
+[13-Jan-2025 05:54:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/ver_wellness.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/ver_wellness.php on line 44
+[13-Jan-2025 05:56:03 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 05:56:03 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 05:56:03 UTC] PHP Warning:  Undefined variable $conn in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/ver_wellness.php on line 44
+[13-Jan-2025 05:56:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/ver_wellness.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/ver_wellness.php on line 44
+[13-Jan-2025 05:57:45 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'c*s2023'@'localhost' (using password: YES) in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/db/connection_2.php:7
+Stack trace:
+#0 /home/ytqy9p2h21yf/public_html/2025/sistemaCas/db/connection_2.php(7): mysqli->__construct()
+#1 /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/ver_wellness.php(3): include('/home/ytqy9p2h2...')
+#2 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/db/connection_2.php on line 7
+[13-Jan-2025 06:00:07 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:00:07 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:00:15 UTC] PHP Warning:  include(../layout/navbar.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edicion_wellness.php on line 18
+[13-Jan-2025 06:00:15 UTC] PHP Warning:  include(): Failed opening '../layout/navbar.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edicion_wellness.php on line 18
+[13-Jan-2025 06:00:15 UTC] PHP Warning:  include(../model/conn.php): Failed to open stream: No such file or directory in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edicion_wellness.php on line 19
+[13-Jan-2025 06:00:15 UTC] PHP Warning:  include(): Failed opening '../model/conn.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edicion_wellness.php on line 19
+[13-Jan-2025 06:00:15 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edicion_wellness.php on line 28
+[13-Jan-2025 06:00:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edicion_wellness.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edicion_wellness.php on line 28
+[13-Jan-2025 06:00:16 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:00:16 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:17:20 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:17:20 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:18:54 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:18:54 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:19:00 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:19:00 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:19:05 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:19:05 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:19:17 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:19:17 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:19:20 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:19:20 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:19:21 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:19:21 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:19:21 UTC] PHP Warning:  Undefined variable $conn1 in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edit_wellness.php on line 35
+[13-Jan-2025 06:19:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edit_wellness.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/module_wellness/edit_wellness.php on line 35
+[13-Jan-2025 06:19:25 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:19:25 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:20:37 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:20:37 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:20:39 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:20:39 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:20:47 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:20:47 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:20:48 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:20:48 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:20:50 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:20:50 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:21:58 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:21:58 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:21:59 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:21:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 06:25:59 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 06:25:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 15:25:32 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 15:25:32 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 15:26:23 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 15:26:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 15:26:25 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 15:26:25 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[13-Jan-2025 15:26:27 UTC] Acceso validado para rol: admin en módulo usuarios.
+[13-Jan-2025 15:26:27 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 04:59:17 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 04:59:17 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 04:59:19 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 04:59:19 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 04:59:22 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 04:59:22 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 05:39:49 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 05:39:49 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 05:39:51 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 05:39:51 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 05:39:52 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 05:39:52 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 05:39:58 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 05:39:58 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 05:40:02 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 05:40:02 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[15-Jan-2025 05:40:05 UTC] Acceso validado para rol: admin en módulo usuarios.
+[15-Jan-2025 05:40:05 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[16-Jan-2025 17:33:37 UTC] Acceso validado para rol: admin en módulo usuarios.
+[16-Jan-2025 17:33:37 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[16-Jan-2025 17:33:40 UTC] Acceso validado para rol: admin en módulo usuarios.
+[16-Jan-2025 17:33:40 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[17-Jan-2025 14:40:34 UTC] Acceso validado para rol: admin en módulo usuarios.
+[17-Jan-2025 14:40:34 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[17-Jan-2025 14:40:42 UTC] Acceso validado para rol: admin en módulo usuarios.
+[17-Jan-2025 14:40:42 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[17-Jan-2025 14:40:48 UTC] Acceso validado para rol: admin en módulo usuarios.
+[17-Jan-2025 14:40:48 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[22-Jan-2025 04:31:22 UTC] Acceso validado para rol: admin en módulo usuarios.
+[22-Jan-2025 04:31:22 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[22-Jan-2025 04:31:24 UTC] Acceso validado para rol: admin en módulo usuarios.
+[22-Jan-2025 04:31:24 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[22-Jan-2025 04:31:26 UTC] Acceso validado para rol: admin en módulo usuarios.
+[22-Jan-2025 04:31:26 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[22-Jan-2025 04:31:27 UTC] Acceso validado para rol: admin en módulo usuarios.
+[22-Jan-2025 04:31:27 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2
+[22-Jan-2025 04:31:29 UTC] Acceso validado para rol: admin en módulo usuarios.
+[22-Jan-2025 04:31:29 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/ytqy9p2h21yf/public_html/2025/sistemaCas/modules/shared/navbar.php on line 2

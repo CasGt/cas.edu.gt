@@ -1,0 +1,8 @@
+[03-Jan-2025 16:25:29 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/forms/inscripciones/cambiar_pss/cambiarpsw.php:62
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/forms/inscripciones/cambiar_pss/cambiarpsw.php on line 62
+[03-Jan-2025 16:25:55 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/forms/inscripciones/cambiar_pss/cambiarpsw.php:62
+Stack trace:
+#0 {main}
+  thrown in /home/ytqy9p2h21yf/public_html/nueva_pagina_cas/forms/inscripciones/cambiar_pss/cambiarpsw.php on line 62

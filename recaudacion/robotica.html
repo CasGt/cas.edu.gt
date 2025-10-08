@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seguimiento de Objetivos</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Seguimiento de Objetivos</h1>
+    <div id="targetSection">
+      <label>Objetivo total:</label>
+      <input type="number" id="targetInput" placeholder="Ej. 1500" />
+      <button onclick="setTarget()">Guardar Objetivo</button>
+    </div>
+
+    <div id="trackingSection" class="hidden">
+      <label>Valor semanal alcanzado:</label>
+      <input type="number" id="valueInput" />
+      <button onclick="addWeeklyValue()">Agregar Semana</button>
+
+      <div id="summary">
+        <p>Total Acumulado: <strong id="totalDisplay">0</strong> / <span id="targetDisplay">0</span></p>
+        <progress id="progressBar" value="0" max="100"></progress>
+      </div>
+
+      <canvas id="progressChart"></canvas>
+
+      <table>
+        <thead>
+          <tr><th>Semana</th><th>Valor</th></tr>
+        </thead>
+        <tbody id="valueTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

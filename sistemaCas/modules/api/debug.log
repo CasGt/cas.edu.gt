@@ -1,0 +1,613 @@
+Datos recibidos: 
+Datos recibidos: 
+Datos recibidos: 
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco FROM alumno AS a
+                    INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno
+                    INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno
+                    INNER JOIN terceros as t ON t.codigo_alumno = m.codigo_alumno
+                    WHERE YEAR(a.cicloActual) = 2024
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco FROM alumno AS a
+                    INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno
+                    INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno
+                    INNER JOIN terceros as t ON t.codigo_alumno = m.codigo_alumno
+                    a.cicloActual = 2024 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco FROM alumno AS a
+                    INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno
+                    INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno
+                    INNER JOIN terceros as t ON t.codigo_alumno = m.codigo_alumno
+                    a.cicloActual = 2024 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno FROM alumno AS a
+                    INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno
+                    INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno
+                    INNER JOIN terceros as t ON t.codigo_alumno = m.codigo_alumno
+                    a.cicloActual = 2024 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2024
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2024
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2024
+                    a.cicloActual = 2024 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2024
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2024
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2024
+                    WHERE a.cicloActual = 2024 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2024
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2024
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2024
+                    WHERE a.cicloActual = 2025 a.estado = 1 
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2024
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2024
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2024
+                    WHERE a.cicloActual = 2025 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2024
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2024
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2024
+                    WHERE a.cicloActual = 2025 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2024
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2024
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2024
+                    WHERE a.cicloActual = 2025 and a.estado = 1
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2025
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2025
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2025
+                    WHERE a.cicloActual = 2025 and a.estado = 1
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco 
+                                FROM 
+                                alumno AS a
+                                INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+                                INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno AND p.cicloActual = 2025
+                                INNER JOIN terceros AS t ON t.codigo_alumno = m.codigo_alumno AND t.cicloActual = 2025
+                                WHERE 
+                                    a.cicloActual = 2025 AND a.estado = 1
+                                GROUP BY 
+                                    a.codigo_alumno
+                                HAVING 
+                                    MAX(a.updated_at)
+                                
+Consulta ejecutada: SELECT a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco FROM alumno AS a
+                    INNER JOIN madre AS m ON  m.codigo_alumno = a.codigo_alumno and m.cicloActual = 2024
+                    INNER JOIN padre AS p ON  p.codigo_alumno = m.codigo_alumno and p.cicloActual = 2024
+                    INNER JOIN terceros as t ON  t.codigo_alumno = m.codigo_alumno and t.cicloActual = 2024
+                    WHERE a.cicloActual = 2024 and a.estado = 1
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco 
+                                FROM 
+                                alumno AS a
+                                INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+                                INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno AND p.cicloActual = 2025
+                                INNER JOIN terceros AS t ON t.codigo_alumno = m.codigo_alumno AND t.cicloActual = 2025
+                                WHERE 
+                                    a.cicloActual = 2025 AND a.estado = 1
+                                GROUP BY 
+                                    a.codigo_alumno
+                                HAVING 
+                                    MAX(a.updated_at)
+                                
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco 
+                                FROM 
+                                alumno AS a
+                                INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+                                INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno AND p.cicloActual = 2025
+                                INNER JOIN terceros AS t ON t.codigo_alumno = m.codigo_alumno AND t.cicloActual = 2025
+                                WHERE 
+                                    a.cicloActual = 2025 AND a.estado = 1
+                                GROUP BY 
+                                    a.codigo_alumno
+                                HAVING 
+                                    MAX(m.updated_at)
+                                
+Consulta ejecutada: 
+SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    (SELECT * FROM alumno WHERE cicloActual = 2025 AND estado = 1) AS a
+    INNER JOIN (
+        SELECT * FROM madre WHERE cicloActual = 2025 
+        AND updated_at = (SELECT MAX(updated_at) FROM madre WHERE cicloActual = 2025)
+    ) AS m ON m.codigo_alumno = a.codigo_alumno
+    INNER JOIN (
+        SELECT * FROM padre WHERE cicloActual = 2025 
+        AND updated_at = (SELECT MAX(updated_at) FROM padre WHERE cicloActual = 2025)
+    ) AS p ON p.codigo_alumno = a.codigo_alumno
+    INNER JOIN (
+        SELECT * FROM terceros WHERE cicloActual = 2025 
+        AND updated_at = (SELECT MAX(updated_at) FROM terceros WHERE cicloActual = 2025)
+    ) AS t ON t.codigo_alumno = a.codigo_alumno
+
+Consulta ejecutada: 
+SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    (SELECT * FROM alumno WHERE cicloActual = 2025 AND estado = 1) AS a
+    INNER JOIN (
+        SELECT * FROM madre WHERE cicloActual = 2025 
+        AND updated_at = (SELECT MAX(updated_at) FROM madre WHERE cicloActual = 2025)
+    ) AS m ON m.codigo_alumno = a.codigo_alumno
+    INNER JOIN (
+        SELECT * FROM padre WHERE cicloActual = 2025 
+        AND updated_at = (SELECT MAX(updated_at) FROM padre WHERE cicloActual = 2025)
+    ) AS p ON p.codigo_alumno = a.codigo_alumno
+    INNER JOIN (
+        SELECT * FROM terceros WHERE cicloActual = 2025 
+        AND updated_at = (SELECT MAX(updated_at) FROM terceros WHERE cicloActual = 2025)
+    ) AS t ON t.codigo_alumno = a.codigo_alumno
+
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco 
+                                FROM 
+                                alumno AS a
+                                INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2024
+                                INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno AND p.cicloActual = 2024
+                                INNER JOIN terceros AS t ON t.codigo_alumno = m.codigo_alumno AND t.cicloActual = 2024
+                                WHERE 
+                                    a.cicloActual = 2024 AND a.estado = 1
+                                GROUP BY 
+                                    a.codigo_alumno
+                                HAVING 
+                                    MAX(a.updated_at)
+                                
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco 
+                                FROM 
+                                alumno AS a
+                                INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+                                INNER JOIN padre AS p ON p.codigo_alumno = m.codigo_alumno AND p.cicloActual = 2025
+                                INNER JOIN terceros AS t ON t.codigo_alumno = m.codigo_alumno AND t.cicloActual = 2025
+                                WHERE 
+                                    a.cicloActual = 2025 AND a.estado = 1
+                                GROUP BY 
+                                    a.codigo_alumno
+                                HAVING 
+                                    MAX(a.updated_at)
+                                
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco 
+                                FROM 
+                                alumno AS a
+                                INNER JOIN madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+                                INNER JOIN padre AS p ON p.codigo_alumno = a.codigo_alumno AND p.cicloActual = 2025
+                                INNER JOIN terceros AS t ON t.codigo_alumno = a.codigo_alumno AND t.cicloActual = 2025
+                                WHERE 
+                                    a.cicloActual = 2025 AND a.estado = 1
+                                GROUP BY 
+                                    a.codigo_alumno
+                                HAVING 
+                                    MAX(a.updated_at)
+                                
+Consulta ejecutada: SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    alumno AS a
+LEFT JOIN 
+    madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+LEFT JOIN 
+    padre AS p ON p.codigo_alumno = a.codigo_alumno AND p.cicloActual = 2025
+LEFT JOIN 
+    terceros AS t ON t.codigo_alumno = a.codigo_alumno AND t.cicloActual = 2025
+WHERE 
+    a.cicloActual = 2025 AND a.estado = 1
+GROUP BY 
+    a.codigo_alumno
+HAVING 
+    MAX(a.updated_at)
+
+                                
+Consulta ejecutada: SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    alumno AS a
+RIGHT JOIN 
+    madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+RIGHT JOIN 
+    padre AS p ON p.codigo_alumno = a.codigo_alumno AND p.cicloActual = 2025
+RIGHT JOIN 
+    terceros AS t ON t.codigo_alumno = a.codigo_alumno AND t.cicloActual = 2025
+WHERE 
+    a.cicloActual = 2025 AND a.estado = 1
+GROUP BY 
+    a.codigo_alumno
+HAVING 
+    MAX(a.updated_at)
+
+                                
+Consulta ejecutada: SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    alumno AS a
+LEFT JOIN 
+    madre AS m ON m.codigo_alumno = a.codigo_alumno AND m.cicloActual = 2025
+LEFT JOIN 
+    padre AS p ON p.codigo_alumno = a.codigo_alumno AND p.cicloActual = 2025
+LEFT JOIN 
+    terceros AS t ON t.codigo_alumno = a.codigo_alumno AND t.cicloActual = 2025
+WHERE 
+    a.cicloActual = 2025 AND a.estado = 1
+GROUP BY 
+    a.codigo_alumno
+HAVING 
+    MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+    a.codigo_alumno,
+    COALESCE(m1.nombres_madre, m2.nombres_madre) AS nombres_madre,
+    COALESCE(p1.nombres_padre, p2.nombres_padre) AS nombres_padre,
+    COALESCE(t1.terceros1_retiran_alumno, t2.terceros1_retiran_alumno) AS terceros1_retiran_alumno
+FROM 
+    alumno AS a
+LEFT JOIN 
+    madre AS m1 ON m1.codigo_alumno = a.codigo_alumno AND m1.cicloActual = 2025
+LEFT JOIN 
+    madre AS m2 ON m2.codigo_alumno = a.codigo_alumno AND m2.cicloActual = (2025 - 1)
+LEFT JOIN 
+    padre AS p1 ON p1.codigo_alumno = a.codigo_alumno AND p1.cicloActual = 2025
+LEFT JOIN 
+    padre AS p2 ON p2.codigo_alumno = a.codigo_alumno AND p2.cicloActual = (2025 - 1)
+LEFT JOIN 
+    terceros AS t1 ON t1.codigo_alumno = a.codigo_alumno AND t1.cicloActual = 2025
+LEFT JOIN 
+    terceros AS t2 ON t2.codigo_alumno = a.codigo_alumno AND t2.cicloActual = (2025 - 1)
+WHERE 
+    a.cicloActual = 2025 AND a.estado = 1
+GROUP BY 
+    a.codigo_alumno
+HAVING 
+    MAX(a.updated_at)
+
+Consulta ejecutada: SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    alumno AS a
+LEFT JOIN 
+    madre AS m ON m.codigo_alumno = a.codigo_alumno 
+LEFT JOIN 
+    padre AS p ON p.codigo_alumno = a.codigo_alumno 
+LEFT JOIN 
+    terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+WHERE 
+    a.cicloActual = 2025 AND a.estado = 1
+GROUP BY 
+    a.codigo_alumno
+HAVING 
+    MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    alumno AS a
+LEFT JOIN 
+    madre AS m ON m.codigo_alumno = a.codigo_alumno 
+LEFT JOIN 
+    padre AS p ON p.codigo_alumno = a.codigo_alumno 
+LEFT JOIN 
+    terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+WHERE 
+    a.cicloActual = 2025 AND a.estado = 1
+GROUP BY 
+    a.codigo_alumno
+HAVING 
+    MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+    a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+FROM 
+    alumno AS a
+LEFT JOIN 
+    madre AS m ON m.codigo_alumno = a.codigo_alumno 
+LEFT JOIN 
+    padre AS p ON p.codigo_alumno = a.codigo_alumno 
+LEFT JOIN 
+    terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+WHERE 
+    a.cicloActual = 2024 AND a.estado = 1
+GROUP BY 
+    a.codigo_alumno
+HAVING 
+    MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2024 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2024 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2024 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.direccion_padre AS p_direccion_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.direccion_padre AS p_direccion_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.direccion_madre AS m_direccion_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.profesion_padre AS p_profesion_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.profesion_madre AS m_profesion_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2024 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2024 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.dpi_padre AS p_dpi_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.telefonocasa_padre AS p_telefonocasa_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.departamentoempresa_padre AS p_departamentoempresa_padre, p.correo_empresa_padre AS p_correo_empresa_padre, p.telefono_empresa_padre AS p_telefono_empresa_padre, p.nacionalidad_padre AS p_nacionalidad_padre, p.nit_padre AS p_nit_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.estado_civil_padre AS p_estado_civil_padre, p.municipio_padre AS p_municipio_padre, p.cargoenepresa_padre AS p_cargoenepresa_padre, p.municipio_empresa_padre AS p_municipio_empresa_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.dpi_madre AS m_dpi_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.telefonocasa_madre AS m_telefonocasa_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.departamentoempresa_madre AS m_departamentoempresa_madre, m.correo_empresa_madre AS m_correo_empresa_madre, m.telefono_empresa_madre AS m_telefono_empresa_madre, m.nacionalidad_madre AS m_nacionalidad_madre, m.nit_madre AS m_nit_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.estado_civil_madre AS m_estado_civil_madre, m.municipio_madre AS m_municipio_madre, m.cargoenepresa_madre AS m_cargoenepresa_madre, m.municipio_empresa_madre AS m_municipio_empresa_madre, t.terceros1_retiran_alumno AS t_terceros1_retiran_alumno, t.terceros1_retiran_alumno_parentesco AS t_terceros1_retiran_alumno_parentesco, t.terceros1_retiran_alumno_telefono AS t_terceros1_retiran_alumno_telefono, t.terceros1_parentezco AS t_terceros1_parentezco, t.terceros2_retiran_alumno AS t_terceros2_retiran_alumno, t.terceros2_retiran_alumno_parentesco AS t_terceros2_retiran_alumno_parentesco, t.terceros2_retiran_alumno_telefono AS t_terceros2_retiran_alumno_telefono, t.terceros2_parentezco AS t_terceros2_parentezco
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno, a.grado_alumno AS a_grado_alumno, a.nacimiento_alumno AS a_nacimiento_alumno, p.nombres_padre AS p_nombres_padre, p.apellidos_padre AS p_apellidos_padre, p.correo_padre AS p_correo_padre, p.celular_padre AS p_celular_padre, p.direccion_padre AS p_direccion_padre, p.empresalabora_padre AS p_empresalabora_padre, p.profesion_padre AS p_profesion_padre, p.departamento_padre AS p_departamento_padre, p.municipio_padre AS p_municipio_padre, m.nombres_madre AS m_nombres_madre, m.apellidos_madre AS m_apellidos_madre, m.correo_madre AS m_correo_madre, m.celular_madre AS m_celular_madre, m.direccion_madre AS m_direccion_madre, m.empresalabora_madre AS m_empresalabora_madre, m.profesion_madre AS m_profesion_madre, m.departamento_madre AS m_departamento_madre, m.municipio_madre AS m_municipio_madre
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)
