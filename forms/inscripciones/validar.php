@@ -1,6 +1,5 @@
 <?php
-init_set('display_errors', 1);
-error_reporting(E_ALL);
+
 // Conexión a la base de datos
 require './conexion.php';
 

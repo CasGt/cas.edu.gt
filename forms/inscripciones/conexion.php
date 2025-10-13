@@ -1,9 +1,8 @@
 <?php
-init_set('display_errors', 1);
-error_reporting(E_ALL);
+
 // Conexión a la base de datos
-$host = '127.0.0.1:3306';
-$dbname = 'u185752343_informacion';
+$host = '127.0.0.1';
+//$dbname = 'u185752343_informacion';
 $username = 'u185752343_admin_cas_info';
 $password = 'Admin_cas_inscr2025*';
 
