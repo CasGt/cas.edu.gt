@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['password'] = $hashed_pass;
             $_SESSION['carnet'] = $carnet;
             
-            //header('Location: formulario.php');
+            header('Location: formulario.php');
             exit();
         } else {
             // Contraseña incorrecta
