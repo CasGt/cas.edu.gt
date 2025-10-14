@@ -37,23 +37,22 @@
         <section id="features">
             <div class="container mx-auto px-16">
                 <div class="text-center mb-8">
-                    <p>Recuerda que debes completar algunos <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php"
-                            class="text-indigo-600 hover:underline">procedimientos</a> para nuevo ingreso.</p>
+                    <p>Recuerda que debes completar algunos procedimientos para nuevo ingreso.</p>
                 </div>
 
                 <div class="flex flex-col lg:flex-row lg:space-x-8">
                     <div class="lg:w-1/4 mb-8 lg:mb-0">
                         <ul class="space-y-4">
                             <li>
-                                <a class="block p-4 border rounded-lg hover:bg-indigo-50" href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php">
+                                <a class="block p-4 border rounded-lg hover:bg-indigo-50" href="#procedimiento">
                                     <h4 class="text-lg font-medium">Procedimiento</h4>
-                                    <h4 class="text-lg font-medium">Produce</h4>
+                         
                                     <p class="text-sm text-gray-600">Revisa aquí el procedimiento para inscripciones</p>
                                 </a>
                             </li>
                             <li>
                                 <!-- <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php"  id="newIngreso"</a> class="block p-4 border rounded-lg hover:bg-indigo-50"> !-->
-                                 <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php" class="block p-4 border rounded-lg hover:bg-indigo-50"> 
+                                 <a href="../forms/inscripciones/" class="block p-4 border rounded-lg hover:bg-indigo-50"> 
                                     <h4 class="text-lg font-medium">Nuevo Ingreso</h4>
                                     <p class="text-sm text-gray-600">Completa aquí el formulario para formar parte de
                                         nuestra familia.</p>
@@ -61,7 +60,7 @@
                             </li>
                             <li>
                                <!-- <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php" id="reinscripcion" class="block p-4 border rounded-lg hover:bg-indigo-50"> -->
-                               <a href="https://cas.edu.gt/nueva_pagina_cas/forms/inscripciones/index.php" class="block p-4 border rounded-lg hover:bg-indigo-50">
+                               <a href="../forms/inscripciones/" class="block p-4 border rounded-lg hover:bg-indigo-50">
                                     <h4 class="text-lg font-medium">Re-Inscripción</h4>
                                     <p class="text-sm text-gray-600">Si ya tienes tu usuario y contraseña, ingresa aquí
                                         para inscribirte en el ciclo <span id="year"></span>.</p>
@@ -326,11 +325,21 @@
     
     
 <script>
+
+
     document.addEventListener('DOMContentLoaded', function () {
         const newIngresoLink = document.getElementById('newIngreso');
         const reinscripcionLink = document.getElementById('reinscripcion');
         const modal = document.getElementById('myModal');
         const closeModal = document.getElementById('closeModal');
+         const today = new Date();
+        const currentYear = today.getFullYear();
+        const month = today.getMonth();
+        const displayYear = (month >= 6) ? currentYear + 1 : currentYear;   
+         const yearEl = document.getElementById("year");
+        if (yearEl) {
+        yearEl.textContent = displayYear;
+        }
 
         function openModal() {
             modal.classList.remove('hidden');
@@ -359,6 +368,8 @@
             }
         });
     });
+
+
 </script>
 </body>
 

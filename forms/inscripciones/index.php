@@ -1,160 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login y Registro</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hidden { display: none; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscripciones | En mantenimiento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+  
 </head>
-<body class="bg-gray-100">
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-               <div class="flex justify-center mb-6">
-            <img src="./assets/img/logo_cas_red.webp" alt="Logo CAS" class="w-16 h-auto">
-        </div>
-            <h2 class="text-2xl font-bold text-center mb-6">Bienvenido</h2>
-            
-            <!-- Pestañas para alternar entre "Iniciar Sesión" y "Crear Usuario" -->
-            <div class="flex justify-center mb-6">
-                <button id="loginTab" class="px-4 py-2 bg-red-900 text-white rounded-l hover:bg-red-600">Iniciar Sesión</button>
-                <button id="registerTab" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-r">Crear Usuario</button>
-            </div>
+<body class="min-h-screen flex items-center justify-center p-4 bg-[#ece6df]">
 
-            <!-- Formulario de Inicio de Sesión -->
-            <form id="loginForm" action="validar.php" method="POST" class="space-y-6">
-                <div>
-                    <label for="carnet_or_email" class="block font-semibold">Carnet o Correo del Alumno:</label>
-                    <input type="text" id="carnet_or_email" name="carnet_or_email" class="w-full p-2 border border-gray-300 rounded" placeholder="Ingrese su carnet o correo" required>
-                </div>
-                <div>
-                    <label for="password" class="block font-semibold">Contraseña:</label>
-                    <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded" placeholder="Ingrese su contraseña" required>
-                </div>
-                
-                <div class="text-right">
-                <a href="./cambiar_pss/cambiarpsw.php" class="text-blue-500 hover:underline">Olvidé mi contraseña</a>
-                </div>
-                
-                <button type="submit" class="w-full bg-red-900 text-white p-2 rounded hover:bg-red-600">Iniciar Sesión</button>
-            </form>
+  <main class="w-full max-w-4xl aspect-[16/9] rounded-2xl overflow-hidden wood-frame flex items-center justify-center">
+    <div class="chalkboard w-full h-full flex flex-col items-center justify-center text-center px-6 relative pb-10">
 
-            <!-- Formulario de Crear Usuario -->
-            <form id="registerForm" method="POST" class="space-y-6 hidden">
-    <div>
-        <label for="new_nombres" class="block font-semibold">Nombres:</label>
-        <input type="text" id="new_nombres" name="new_nombres" class="w-full p-2 border border-gray-300 rounded" placeholder="Ingrese sus nombres" required>
+    
+
+      <!-- Título -->
+      <h1 class="hand chalk-yellow text-5xl md:text-6xl mb-3 relative chalk-underline">¡Ups!</h1>
+
+      <!-- Descripción -->
+      <p class="chalk text-lg md:text-xl leading-relaxed max-w-[520px] mx-auto mb-6">
+        Estamos <span class="hand">“afinando el proceso de inscripción”</span> para darte una mejor experiencia.<br>
+        Muy pronto podrás acceder nuevamente
+      </p>
+
+      <!-- Doodles -->
+      <div class="mt-2 flex gap-6 opacity-80 mb-6">
+        <svg width="50" height="50" viewBox="0 0 24 24">
+          <path class="chalk-stroke" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a7.5 7.5 0 0 0-.1-1l2.1-1.6-2-3.5-2.5 1a7.8 7.8 0 0 0-1.7-1l-.3-2.7H9.1l-.3 2.7a7.8 7.8 0 0 0-1.7 1l-2.5-1-2 3.5 2.1 1.6a7.5 7.5 0 0 0 0 2L2.6 14l2 3.5 2.5-1a7.8 7.8 0 0 0 1.7 1l.3 2.7h4.8l.3-2.7a7.8 7.8 0 0 0 1.7-1l2.5 1 2-3.5-2.1-1.6c.1-.3.1-.7.1-1z"/>
+        </svg>
+        <svg width="50" height="50" viewBox="0 0 24 24">
+          <path class="chalk-stroke" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/>
+          <path class="chalk-stroke" d="M20.71 7.04a1 1 0 0 0 0-1.41L18.37 3.3a1 1 0 0 0-1.41 0l-1.53 1.53 3.75 3.75 1.53-1.54z"/>
+        </svg>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <a href="../../" class="btn-chalk">Volver</a>
+        
+      </div>
+
+      <!-- Lema -->
+      <p class="text-sm chalk opacity-80 absolute bottom-4 w-full">
+        <span style="color:var(--mostaza);">Colegio Americano del Sur</span> · 
+        <em class="hand">“Forjando mentes brillantes”</em>
+      </p>
     </div>
-    <div>
-        <label for="new_apellidos" class="block font-semibold">Apellidos:</label>
-        <input type="text" id="new_apellidos" name="new_apellidos" class="w-full p-2 border border-gray-300 rounded" placeholder="Ingrese sus apellidos" required>
-    </div>
-    <div>
-        <label for="new_email" class="block font-semibold">Correo Electrónico:</label>
-        <input type="email" id="new_email" name="new_email" class="w-full p-2 border border-gray-300 rounded" placeholder="Ingrese su correo" required>
-    </div>
-    <div>
-        <label for="new_password" class="block font-semibold">Contraseña:</label>
-        <input type="password" id="new_password" name="new_password" class="w-full p-2 border border-gray-300 rounded" placeholder="Ingrese su contraseña" required>
-    </div>
-    <button type="button" id="openModal" class="w-full bg-red-900 text-white p-2 rounded hover:bg-red-600">Crear Usuario</button>
-</form>
-
-
-            <!-- Modal para ingresar el código -->
-            <div id="codeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
-                <div class="bg-white p-6 rounded shadow-lg w-full max-w-sm">
-                    <h2 class="text-xl font-semibold mb-4">Ingrese el Código</h2>
-                    <input type="text" id="codigo" class="w-full p-2 border border-gray-300 rounded mb-4" placeholder="Código de verificación">
-                    <button id="verifyCode" class="w-full bg-red-900 text-white p-2 rounded hover:bg-red-600">Verificar Código</button>
-                </div>
-            </div>
-
-            <!-- Mensajes de error -->
-           <?php
-if (isset($_GET['error'])) {
-    echo '<p id="errorMessage" class="text-red-500 mt-4 text-center">' . htmlspecialchars($_GET['error']) . '</p>';
-}
-?>
-
-        </div>
-    </div>
-
-    <!-- Script para alternar entre formularios y controlar el modal -->
-    <script>
-        const loginTab = document.getElementById('loginTab');
-        const registerTab = document.getElementById('registerTab');
-        const loginForm = document.getElementById('loginForm');
-        const registerForm = document.getElementById('registerForm');
-        const openModalButton = document.getElementById('openModal');
-        const modal = document.getElementById('codeModal');
-        const verifyButton = document.getElementById('verifyCode');
-        const errorMessage = document.getElementById('errorMessage');
-
-        // Mostrar formulario de inicio de sesión y ocultar el de registro
-        loginTab.addEventListener('click', function() {
-            loginForm.classList.remove('hidden');
-            registerForm.classList.add('hidden');
-            loginTab.classList.add('bg-red-900', 'text-white');
-            registerTab.classList.remove('bg-red-900', 'text-white');
-            registerTab.classList.add('bg-gray-300', 'hover:bg-gray-400');
-             if (errorMessage) {
-        errorMessage.style.display = 'none';
-    }
-        });
-
-        // Mostrar formulario de registro y ocultar el de inicio de sesión
-        registerTab.addEventListener('click', function() {
-            registerForm.classList.remove('hidden');
-            loginForm.classList.add('hidden');
-            registerTab.classList.add('bg-red-900', 'text-white');
-            loginTab.classList.remove('bg-red-900', 'text-white');
-            loginTab.classList.add('bg-gray-300', 'hover:bg-gray-400');
-             if (errorMessage) {
-        errorMessage.style.display = 'none';
-    }
-        });
-
-        // Mostrar el modal para ingresar el código
-        openModalButton.addEventListener('click', function() {
-            modal.classList.remove('hidden');
-        });
-
-        // Verificar el código y realizar la validación
-        verifyButton.addEventListener('click', function() {
-    const codigo = document.getElementById('codigo').value;
-    const nombres = document.getElementById('new_nombres').value;
-    const apellidos = document.getElementById('new_apellidos').value;
-    const email = document.getElementById('new_email').value;
-    const password = document.getElementById('new_password').value;
-
-    // Realizar una solicitud AJAX para verificar el código y crear el usuario
- const xhr = new XMLHttpRequest();
-            xhr.open("POST", "verificar_codigo.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    const response = xhr.responseText.trim(); // Asegurarse de eliminar espacios en blanco
-                    if (response === "success") {
-                        alert("¡Usuario creado exitosamente! ¡Bienvenid@!");
-                        setTimeout(function() {
-                            window.location.href = "formulario.php";  // Redirigir después de mostrar el alert
-                        }, 500);  // Añade un retraso de 500ms antes de redirigir
-                    } else if (response === "codigo_usado") {
-                        alert("El código ya fue utilizado. Por favor, solicita uno nuevo a administración.");
-                    } else if (response === "codigo_invalido") {
-                        alert("Código incorrecto. Por favor, intente de nuevo.");
-                    } else if (response === "error_crear_usuario") {
-                        alert("Hubo un error al crear el usuario. Por favor, intente de nuevo más tarde.");
-                    }
-                }
-            };
-    xhr.send(`codigo=${codigo}&new_nombres=${nombres}&new_apellidos=${apellidos}&new_email=${email}&new_password=${password}`);
-});
-
-    </script>
+  </main>
 </body>
 </html>
