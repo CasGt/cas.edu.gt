@@ -4,7 +4,7 @@ session_start();
 
 ini_set('session.cookie_httponly', 1);
 ini_set('session.cookie_samesite', 'Strict'); 
-ini_set('session.cookie_secure', 1); // habilitar si usas HTTPS
+ini_set('session.cookie_secure', 1); 
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   header('Location: index.php'); exit();
@@ -20,7 +20,6 @@ if ($input === '' || $password === '') {
 
 $cicloActual = date('Y'); 
 
-// Detectar email vs carnet
 $isEmail = filter_var($input, FILTER_VALIDATE_EMAIL);
 $sql = "SELECT codigo_alumno, correo_alumno, pass, carnet
         FROM alumno

@@ -11,16 +11,13 @@
 </head>
 <body class="text-gray-800">
 
-<!-- Navbar -->
 <?php include '../shared/navbar.php'; ?>
 
-<!-- Espaciador para evitar que la tabla se superponga al navbar -->
 <div class="mt-4"></div>
 
 <div class="container mx-auto p-6 bg-white rounded-lg shadow-md">
     <h1 class="text-2xl font-bold mb-6 text-gray-700 text-center">Perfil médico</h1>
 
-    <!-- Filtros -->
  <div class="flex justify-between items-center mb-4">
         <div>
             <label for="filterYear" class="mr-2 text-gray-700 font-bold">Filtrar por año:</label>
@@ -45,11 +42,8 @@
         </div>
     </div>
 
-
-    <!-- Frase de registros -->
     <p id="totalData" class="text-gray-600 mb-4"></p>
 
-    <!-- Tabla -->
     <div class="overflow-x-auto">
         <table id="miTabla" class="w-full bg-white border border-gray-300 rounded-lg shadow-md text-center">
             <thead>
@@ -64,12 +58,11 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Filas generadas dinámicamente -->
+
             </tbody>
         </table>
     </div>
 
-    <!-- Paginación -->
     <div id="pagination" class="flex justify-center mt-4"></div>
 </div>
 
@@ -86,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPage = 1;
     let filteredData = [];
 
-    // Función para cargar estudiantes, años y grados
     const loadStudentsAndFilters = async (year = "", grade = "", search = "") => {
         let url = `../api/get_student.php?action=recent_or_previous&get_years=true`;
         if (year) url += `&ciclo_actual=${year}`;
@@ -97,14 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(url);
             const data = await response.json();
 
-            // Cargar años en el filtro
             if (data.years && yearSelect.options.length === 1) {
                 yearSelect.innerHTML += data.years
                     .map(year => `<option value="${year}">${year}</option>`)
                     .join('');
             }
 
-            // Cargar grados en el filtro
             if (data.grados && gradeSelect.options.length === 1) {
                 gradeSelect.innerHTML += data.grados
                     .map(grade => `<option value="${grade}">${grade}</option>`)
@@ -128,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Función para renderizar la tabla
     const renderTable = () => {
         const start = (currentPage - 1) * rowsPerPage;
         const end = start + rowsPerPage;
@@ -153,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
         totalData.textContent = `Mostrando ${start + 1} a ${Math.min(end, filteredData.length)} de ${filteredData.length} registros.`;
     };
 
-    // Función para renderizar la paginación
     const renderPagination = () => {
         pagination.innerHTML = '';
         const totalPages = Math.ceil(filteredData.length / rowsPerPage);
@@ -170,12 +158,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Eventos de filtros
     yearSelect.addEventListener("change", () => loadStudentsAndFilters(yearSelect.value, gradeSelect.value, searchInput.value));
     gradeSelect.addEventListener("change", () => loadStudentsAndFilters(yearSelect.value, gradeSelect.value, searchInput.value));
     searchInput.addEventListener("input", () => loadStudentsAndFilters(yearSelect.value, gradeSelect.value, searchInput.value));
 
-    // Cargar datos iniciales
     loadStudentsAndFilters();
 });
 

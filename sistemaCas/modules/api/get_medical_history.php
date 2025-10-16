@@ -2,7 +2,6 @@
 require '../../db/connection.php';
 header('Content-Type: application/json');
 
-// Validar parámetros obligatorios
 if (!isset($_GET['codigo_alumno']) || empty(trim($_GET['codigo_alumno'])) || 
     !isset($_GET['ciclo_actual']) || empty(trim($_GET['ciclo_actual']))) {
     echo json_encode(['success' => false, 'message' => 'El código del alumno y el ciclo actual son obligatorios.']);
@@ -22,21 +21,18 @@ try {
         'vacunas' => []
     ];
 
-    // Consultar alergias
     $stmt = $conn->prepare("SELECT alergias_estudiante FROM historial_medico WHERE codigo_alumno = ?");
     $stmt->bind_param("s", $codigo_alumno);
     $stmt->execute();
     $result = $stmt->get_result();
 
     while ($row = $result->fetch_assoc()) {
-        // Dividir datos por comas, barras o guiones
         $alergias = preg_split("/[,\/\-]+/", $row['alergias_estudiante']);
         foreach ($alergias as $alergia) {
             $data['alergias'][] = ucfirst(trim($alergia));
         }
     }
 
-    // Consultar enfermedades
     $stmt = $conn->prepare("SELECT enfermedades_estudiante FROM historial_medico WHERE codigo_alumno = ? AND cicloActual = ?");
     $stmt->bind_param("ss", $codigo_alumno, $ciclo_actual);
     $stmt->execute();
@@ -49,7 +45,6 @@ try {
         }
     }
 
-    // Consultar medicamento diario
     $stmt = $conn->prepare("SELECT medicamento_diario FROM historial_medico WHERE codigo_alumno = ? AND cicloActual = ?");
     $stmt->bind_param("ss", $codigo_alumno, $ciclo_actual);
     $stmt->execute();
@@ -62,7 +57,6 @@ try {
         }
     }
 
-    // Consultar otras vacunas
     $stmt = $conn->prepare("SELECT otras_vacunas_estudiante FROM historial_medico WHERE codigo_alumno = ? AND cicloActual = ?");
     $stmt->bind_param("ss", $codigo_alumno, $ciclo_actual);
     $stmt->execute();
@@ -75,7 +69,6 @@ try {
         }
     }
 
-    // Consultar medicamentos y vacunas
     $stmt_columns = $conn->prepare("SELECT * FROM historial_medico WHERE codigo_alumno = ? AND cicloActual = ?");
     $stmt_columns->bind_param("ss", $codigo_alumno, $ciclo_actual);
     $stmt_columns->execute();

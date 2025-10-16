@@ -17,7 +17,6 @@ validateAccess('administracion');
 </head>
 
 <body class="bg-gray-100">
-    <!-- Navbar -->
     <?php
  include '../shared/navbar.php';
     ?>

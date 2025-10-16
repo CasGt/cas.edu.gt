@@ -76,23 +76,19 @@ $stmt_actual_estado2->close();
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-          
 
-            <!-- Año anterior -->
             <div class="bg-white rounded-lg shadow-md p-8 text-center">
                 <h2 class="text-2xl font-bold text-gray-700 mb-4">Formularios (<?php echo $anio_anterior; ?>)</h2>
                 <p class="text-lg text-gray-500">Cantidad de formularios validados</p>
                 <p class="text-5xl font-bold text-gray-800 mt-4"><?php echo $total_anterior; ?></p>
             </div>
 
-              <!-- Año actual -->
               <div class="bg-white rounded-lg shadow-md p-8 text-center">
                 <h2 class="text-2xl font-bold text-gray-700 mb-4">Formularios (<?php echo $anio_actual; ?>)</h2>
                 <p class="text-lg text-gray-500">Cantidad de formularios validados</p>
                 <p class="text-5xl font-bold text-gray-800 mt-4"><?php echo $total_actual; ?></p>
             </div>
 
-            <!-- Año próximo -->
             <div class="bg-white rounded-lg shadow-md p-8 text-center">
                 <h2 class="text-2xl font-bold text-gray-700 mb-4">Formularios llenos (<?php echo $anio_proximo; ?>)</h2>
                 <p class="text-lg text-gray-500">Cantidad de formularios validados</p>
@@ -101,7 +97,6 @@ $stmt_actual_estado2->close();
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 justify-center mt-8">
-            <!-- Formularios no validados del año actual -->
             <div class="bg-white rounded-lg shadow-md p-8 text-center">
                 <h2 class="text-2xl font-bold text-red-600 mb-4">Formularios no validados (<?php echo $anio_actual; ?>)</h2>
                 <p class="text-lg text-gray-500">Cantidad de formularios llenos pero no habilitados</p>

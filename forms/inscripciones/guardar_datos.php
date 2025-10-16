@@ -3,7 +3,6 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Conexi�n a la base de datos
 require './conexion.php';
 $nuevo_anio = date("Y")+1;
 
@@ -23,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $anioIngresoCas = $_POST['anioIngresoCas'];
     $estadoUsuario = '2';
 
-    // Insertar en la tabla "alumno"
 $sql_alumno = "UPDATE alumno 
                SET
                    carnet = ?, 
@@ -38,7 +36,7 @@ $sql_alumno = "UPDATE alumno
                    correo_encargado_llenar_form = ?, 
                    encargado_llenar_form = ?, 
                    estado = ?
-               WHERE codigo_alumno = ? and cicloActual = '2025'";  // o id_alumno, según tu lógica
+               WHERE codigo_alumno = ? and cicloActual = '2025'";
 
 $stmt_alumno = $conn->prepare($sql_alumno);
 $stmt_alumno->bind_param(
@@ -55,7 +53,7 @@ $stmt_alumno->bind_param(
     $correo_encargado_lleno_f, 
     $nombre_encargado_lleno_f, 
     $estadoUsuario,
-    $codigo_alumno // este es el del WHERE
+    $codigo_alumno 
 );
 
     if (!$stmt_alumno->execute()) {
@@ -64,9 +62,7 @@ $stmt_alumno->bind_param(
 
 
     if ($stmt_alumno) {
-           
-        // Informaci�n m�dica del alumno (vacunas, enfermedades, alergias, medicamentos)
-       
+
         $actividades_estudiante = $_POST['actividades_estudiante'];
         $enfermedades_estudiante = $_POST['enfermedades_estudiante'];
         $alergias_estudiante = $_POST['alergias_estudiante'];
@@ -119,8 +115,6 @@ $stmt_alumno->bind_param(
         $tabcin = isset($_POST['tabcin']) ? 1 : 0;
         $pasta_lasar = isset($_POST['pasta_lasar']) ? 1 : 0;
 
-        // Insertar en la tabla "historial_medico"
-        // Insertar en la tabla "historial_medico"
         $sql_historial_medico = "INSERT INTO historial_medico (
             carnet,
             codigo_alumno, 
@@ -265,7 +259,6 @@ $stmt_alumno->bind_param(
         $telefono_empresa_madre = $_POST['telefono_empresa_madre'];
         $correo_empresa_madre = $_POST['correo_empresa_madre'];
 
-        // Insertar en la tabla "madre"
         $sql_madre = "INSERT INTO madre (carnet,codigo_alumno, nombres_madre, apellidos_madre, dpi_madre, nit_madre, estado_civil_madre, nacionalidad_madre, profesion_madre, departamento_madre, municipio_madre, direccion_madre, telefonocasa_madre, celular_madre, correo_madre, empresalabora_madre, cargoenepresa_madre, departamentoempresa_madre, municipio_empresa_madre, direccion_empresa_madre, telefono_empresa_madre, correo_empresa_madre,cicloActual) 
                       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt_madre = $conn->prepare($sql_madre);
@@ -299,8 +292,6 @@ $stmt_alumno->bind_param(
             die("Error al insertar en la tabla alumno: " . $stmt_madre->error);
         }
 
-        // Informaci�n del padre
-     
         $nombres_padre = $_POST['nombres_padre'];
         $apellidos_padre = $_POST['apellidos_padre'];
         $dpi_padre = $_POST['dpi_padre'];
@@ -322,7 +313,6 @@ $stmt_alumno->bind_param(
         $telefono_empresa_padre = $_POST['telefono_empresa_padre'];
         $correo_empresa_padre = $_POST['correo_empresa_padre'];
 
-        // Insertar en la tabla "padre"
         $sql_padre = "INSERT INTO padre (carnet, codigo_alumno, nombres_padre, apellidos_padre, dpi_padre, nit_padre, estado_civil_padre, nacionalidad_padre, profesion_padre, departamento_padre, municipio_padre, direccion_padre, telefonocasa_padre, celular_padre, correo_padre, empresalabora_padre, cargoenepresa_padre, departamentoempresa_padre, municipio_empresa_padre, direccion_empresa_padre, telefono_empresa_padre, correo_empresa_padre,cicloActual) 
                       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt_padre = $conn->prepare($sql_padre);
@@ -356,8 +346,7 @@ $stmt_alumno->bind_param(
         if (!$stmt_padre->execute()) {
             die("Error al insertar en la tabla alumno: " . $stmt_padre->error);
         }
-       
-        // Personas autorizadas para retirar al alumno (terceros)
+
         $terceros1_nombre = $_POST['autorizo_retirar1_nombre'];
         $terceros1_parentesco = $_POST['autorizo_retirar1_parentesco'];
         $terceros1_telefono = $_POST['autorizo_retirar1_telefono'];
@@ -365,7 +354,6 @@ $stmt_alumno->bind_param(
         $terceros2_parentesco = $_POST['autorizo_retirar2_parentesco'];
         $terceros2_telefono = $_POST['autorizo_retirar2_telefono'];
 
-        // Insertar en la tabla "terceros"
         $sql_terceros = "INSERT INTO terceros (carnet,codigo_alumno, terceros1_retiran_alumno, terceros1_retiran_alumno_parentesco, terceros1_retiran_alumno_telefono, terceros2_retiran_alumno, terceros2_retiran_alumno_parentesco, terceros2_retiran_alumno_telefono,cicloActual) 
                          VALUES (?,?, ?, ?, ?, ?, ?, ?,?)";
         $stmt_terceros = $conn->prepare($sql_terceros);
@@ -387,7 +375,7 @@ $stmt_alumno->bind_param(
         $_SESSION['nombre_encargado_lleno_f'] = $nombre_encargado_lleno_f;
 
             echo "Estado actualizado correctamente.";
-            // Redirigir a la p�gina de �xito
+
             header("Location: ./complete.php");
             exit();
         } else {
@@ -397,7 +385,6 @@ $stmt_alumno->bind_param(
         echo "Error al insertar los datos: " . $conn->error;
     }
 
-    // Cerrar las declaraciones y la conexi�n
 
     $stmt_historial_medico->close();
     $stmt_madre->close();

@@ -13,7 +13,6 @@ if (isset($_FILES['image'])) {
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     $valid_extensions = array("jpg", "jpeg", "png", "gif");
 
-    // Verifica si el archivo es una imagen válida
     if (in_array($imageFileType, $valid_extensions)) {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             echo "<script>

@@ -20,23 +20,16 @@ validateAccess('usuarios');
 
 <body class="bg-gray-100">
 
-    <!-- Navbar -->
       <?php include '../shared/navbar.php';
 
-
-
-    // Verificar si se proporcionó un ID válido en la URL
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-        // Obtener el ID del registro
+
         $id = $_GET['id'];
 
-        // Consultar la base de datos para obtener los datos del registro correspondiente
         $sql = "SELECT id_wellness, id_docente, nombre_wellness, estado, lugar, limite, p1, p2, p3, p4, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12 FROM informacion_wellness WHERE id_wellness = $id";
         $result = $conn->query($sql);
 
-        // Verificar si se encontraron resultados
         if ($result->num_rows > 0) {
-            // Obtener los datos del registro
             $row = $result->fetch_assoc();
             $nombre_wellness = $row['nombre_wellness'];
             $lugar = $row['lugar'];
@@ -57,7 +50,7 @@ validateAccess('usuarios');
             $g10 = $row['g10'];
             $g11 = $row['g11'];
             $g12 = $row['g12'];
-            $id_docente = $row['id_docente']; // Obtener el ID del docente del registro
+            $id_docente = $row['id_docente'];
         } else {
             echo "No se encontraron resultados";
         }
@@ -65,10 +58,8 @@ validateAccess('usuarios');
         echo "ID inválido";
     }
 
-    // Cerrar la conexión
     $conn->close();
     ?>
-    <!-- Contenido de la página -->
     <div class="container mx-auto p-4">
 
         <div class="max-w-lg mx-auto bg-white p-6 rounded-md shadow-md">
@@ -77,16 +68,13 @@ validateAccess('usuarios');
                 <label for="carnet_docente" class="block text-gray-700 font-semibold">Docente</label>
                 <?php
                 include '../../db/connection.php';
-                // Consultar la base de datos para obtener los nombres de los maestros
                 $sql2 = "SELECT id, nombresMaestro, apellidosMaestro FROM maestros ORDER BY nombresMaestro, apellidosMaestro";
                 $result2 = $conn->query($sql2);
 
-                // Verificar si hay resultados
                 if ($result2->num_rows > 0) {
-                    // Imprimir los options del select con los nombres de los maestros
                     echo "<select name='carnet_docente' id='carnet_docente' class='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200'>";
                     while ($row2 = $result2->fetch_assoc()) {
-                        $selected = ($row2["id"] == $id_docente) ? "selected" : ""; // Verificar si este docente es el seleccionado inicialmente
+                        $selected = ($row2["id"] == $id_docente) ? "selected" : "";
                         echo "<option value='" . $row2["id"] . "' $selected>" . $row2["nombresMaestro"] . " " . $row2["apellidosMaestro"] . "</option>";
                     }
                     echo "</select>";
@@ -94,7 +82,6 @@ validateAccess('usuarios');
                     echo "No se encontraron maestros";
                 }
 
-                // Cerrar la conexión
                 $conn->close();
                 ?>
             </div>
@@ -116,7 +103,6 @@ validateAccess('usuarios');
 
                 <div class="mb-4">
                     <p class="text-gray-700 font-semibold mb-2">Periodos</p>
-                    <!-- Campos de P -->
                     <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                         <?php for ($i = 1; $i <= 4; $i++) : ?>
                             <label class="inline-flex items-center">
@@ -128,7 +114,6 @@ validateAccess('usuarios');
                 </div>
                 <div class="mb-4">
                     <p class="text-gray-700 font-semibold mb-2">Grados</p>
-                    <!-- Campos de G -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <?php for ($i = 1; $i <= 12; $i++) : ?>
                             <label class="inline-flex items-center">
@@ -141,7 +126,6 @@ validateAccess('usuarios');
                 
 <div class="mb-4">
     <p class="text-gray-700 font-semibold mb-2">Estado</p>
-    <!-- Checkbox para el estado -->
     <label class="inline-flex items-center">
         <input type="checkbox" name="estado" value="1" <?php if ($row['estado'] == 1) echo "checked"; ?> class="form-checkbox text-red-500 focus:ring-red-400 h-5 w-5">
         <span class="ml-2">Activo</span>

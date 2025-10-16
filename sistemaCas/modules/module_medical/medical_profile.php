@@ -55,7 +55,7 @@ $cicloActual =  filter_input(INPUT_GET, 'ciclo_actual', FILTER_SANITIZE_STRING);
     </div>
 
     <div id="medical-data" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Tablas dinámicas -->
+
         <div id="alergias-container"></div>
         <div id="enfermedades-container"></div>
         <div id="medicamento-diario-container"></div>

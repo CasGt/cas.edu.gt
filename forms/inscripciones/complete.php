@@ -1,5 +1,5 @@
 <?php
-// Iniciar la sesión
+
 session_start();
 error_log(print_r($_SESSION, true));
 $year = date("Y");
@@ -54,7 +54,6 @@ $message = "<p> <b>$nombre_encargado_lleno_f</b>, con correo: <b>$correo_encarga
             <p class="text-gray-600">Gracias por completar el formulario. Su información ha sido guardada exitosamente.</p>
             <p class="mt-4 text-gray-600">Cualquier proceso o duda, comuníquese al correo <a href="mailto:iortiz@cas.edu.gt" class="text-blue-500 underline">iortiz@cas.edu.gt</a>. Nos pondremos en contacto con usted si hay novedades.</p>
 
-            <!-- Botón de Finalizar -->
             <button onclick="window.location.href='./cerrar_sesion.php';" class="mt-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none">
                 Finalizar
             </button>

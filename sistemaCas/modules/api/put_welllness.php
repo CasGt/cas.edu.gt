@@ -2,11 +2,10 @@
 include '../../db/connection_2.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar si se proporcionó un ID válido
+
     if (isset($_POST['id']) && is_numeric($_POST['id'])) {
         $id = $_POST['id'];
 
-        // Obtener los datos del formulario
         $nombre_wellness = $_POST['name'];
         $lugar = $_POST['lugar'];
         $limite = $_POST['limite'];
@@ -27,10 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $g11 = isset($_POST['g11']) ? 1 : 0;
         $g12 = isset($_POST['g12']) ? 1 : 0;
 
-        // Obtener el estado del formulario
         $estado = isset($_POST['estado']) ? 1 : 0;
 
-        // Actualizar los datos en la base de datos
         $sql = "UPDATE informacion_wellness SET nombre_wellness='$nombre_wellness', lugar='$lugar', limite=$limite, p1=$p1, p2=$p2, p3=$p3, p4=$p4, g1=$g1, g2=$g2, g3=$g3, g4=$g4, g5=$g5, g6=$g6, g7=$g7, g8=$g8, g9=$g9, g10=$g10, g11=$g11, g12=$g12, estado=$estado WHERE id_wellness=$id";
 
         if ($conn->query($sql) === TRUE) {
@@ -42,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "ID inválido";
     }
 
-    // Cerrar la conexión
     $conn->close();
 } else {
     echo "Método no permitido";

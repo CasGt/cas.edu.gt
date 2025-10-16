@@ -7,20 +7,15 @@ include '../../db/connection_3.php';
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
-// Verifica si el correo está en sesión
 if (!isset($_SESSION['correo'])) {
     header('Location: index.php');
     exit();
 }
 
-// Obtén la contraseña del formulario
 $correo = $_SESSION['correo'];
 $pass = password_hash(filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING), PASSWORD_BCRYPT);
-$token = bin2hex(random_bytes(16)); // Genera un token único
+$token = bin2hex(random_bytes(16));
 
-
-
-// Inserta o actualiza el usuario en la tabla datos_mac
 $query = "
     INSERT INTO datos_mac (correo_alumno, pass, token) 
     VALUES (?, ?, ?)
@@ -30,7 +25,7 @@ $stmt = $conn->prepare($query);
 $stmt->bind_param('sss', $correo, $pass, $token);
 
 if ($stmt->execute()) {
-    // Envía el correo de verificación
+
     $mail = new PHPMailer(true);
 
     try {

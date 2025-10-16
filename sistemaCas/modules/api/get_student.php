@@ -7,7 +7,6 @@ if (isset($_GET['codigo_alumno']) && !empty(trim($_GET['codigo_alumno']))) {
      $year = isset($_GET['year']) ? trim($_GET['year']) : 'NO RECIBIDO';
 
     try {
-        // Consulta específica por `codigo_alumno`ciclo_actual
         $query = "SELECT 
             id_alumno, 
             carnet, 
@@ -29,7 +28,6 @@ if (isset($_GET['codigo_alumno']) && !empty(trim($_GET['codigo_alumno']))) {
 
         if ($result->num_rows > 0) {
             $student = $result->fetch_assoc();
-            // Aplicar prefijo G0 solo a grados del 1 al 12
             if (is_numeric($student['grado']) && intval($student['grado']) >= 1 && intval($student['grado']) <= 12) {
                 $student['grado'] = 'G0' . $student['grado'];
             }
@@ -63,12 +61,10 @@ if (isset($_GET['codigo_alumno']) && !empty(trim($_GET['codigo_alumno']))) {
         FROM alumno
         WHERE alumno.cicloActual = ? AND alumno.estado = 2";
 
-        // Filtro por grado
         if (!empty($grade)) {
             $query .= " AND alumno.grado_alumno = ?";
         }
 
-        // Filtro por búsqueda
         if (!empty($search)) {
             $query .= " AND (alumno.nombres_alumno LIKE ? OR alumno.apellidos_alumno LIKE ? OR alumno.carnet LIKE ?)";
         }
@@ -93,7 +89,6 @@ if (isset($_GET['codigo_alumno']) && !empty(trim($_GET['codigo_alumno']))) {
         if ($result->num_rows > 0) {
             $data = [];
             while ($row = $result->fetch_assoc()) {
-                // Aplicar prefijo G0 solo a grados del 1 al 12
                 if (is_numeric($row['grado']) && intval($row['grado']) >= 1 && intval($row['grado']) <= 12) {
                     $row['grado'] = 'G0' . $row['grado'];
                 }
@@ -112,7 +107,6 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
     $anio_actual = date("Y");
     $anio_anterior = $anio_actual - 1;
 
-    // Obtener parámetros opcionales
     $ciclo_actual = isset($_GET['ciclo_actual']) && !empty($_GET['ciclo_actual']) ? intval($_GET['ciclo_actual']) : null;
     $search = isset($_GET['search']) && !empty(trim($_GET['search'])) ? '%' . trim($_GET['search']) . '%' : null;
     $grado = isset($_GET['grado']) && !empty($_GET['grado']) ? trim($_GET['grado']) : null;
@@ -121,7 +115,6 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
     try {
         $response = [];
 
-        // Obtener años si se solicita
         if ($get_years) {
             $query_years = "SELECT DISTINCT cicloActual FROM alumno WHERE estado = 1 ORDER BY cicloActual DESC";
             $result_years = $conn->query($query_years);
@@ -133,7 +126,6 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
             $response['years'] = $years;
         }
 
-        // Obtener grados únicos para el filtro
         $query_grados = "SELECT DISTINCT grado_alumno AS grado FROM alumno WHERE estado = 1 ORDER BY grado";
         $result_grados = $conn->query($query_grados);
 
@@ -143,7 +135,6 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
         }
         $response['grados'] = $grados;
 
-        // Construir la consulta principal para obtener estudiantes
         $query = "SELECT 
                     alumno.id_alumno AS id,
                     alumno.carnet,
@@ -162,7 +153,6 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
         $params = [];
         $types = "";
 
-        // Filtro por ciclo_actual
         if ($ciclo_actual) {
             $query .= " AND alumno.cicloActual = ?";
             $params[] = $ciclo_actual;
@@ -174,14 +164,12 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
             $types .= "ii";
         }
 
-        // Filtro por grado
         if ($grado) {
             $query .= " AND alumno.grado_alumno = ?";
             $params[] = $grado;
             $types .= "s";
         }
 
-        // Filtro por búsqueda
         if ($search) {
             $query .= " AND (alumno.nombres_alumno LIKE ? 
                             OR alumno.apellidos_alumno LIKE ? 
@@ -194,7 +182,6 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
 
         $query .= " ORDER BY alumno.nombres_alumno, alumno.apellidos_alumno";
 
-        // Preparar y ejecutar la consulta
         $stmt = $conn->prepare($query);
 
         if (!empty($params)) {
@@ -204,11 +191,9 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // Procesar los resultados
         if ($result->num_rows > 0) {
             $data = [];
             while ($row = $result->fetch_assoc()) {
-                // Prefijo G0 para grados del 1 al 12
                 if (is_numeric($row['grado']) && intval($row['grado']) >= 1 && intval($row['grado']) <= 12) {
                     $row['grado'] = 'G0' . $row['grado'];
                 }
@@ -230,7 +215,6 @@ elseif (isset($_GET['action']) && $_GET['action'] === 'recent_or_previous') {
 
 
 else {
-    // Lógica original para listar estudiantes con filtros
     $year = isset($_GET['year']) ? intval($_GET['year']) : date("Y");
     $status = isset($_GET['status']) ? intval($_GET['status']) : 1;
     $grade = isset($_GET['grade']) ? trim($_GET['grade']) : '';
@@ -251,12 +235,10 @@ else {
         FROM alumno
         WHERE estado = ? AND cicloActual = ?";
 
-        // Agregar filtro de grado si existe
         if (!empty($grade)) {
             $query .= " AND grado_alumno = ?";
         }
 
-        // Agregar búsqueda si existe
         if (!empty($search)) {
             $query .= " AND (nombres_alumno LIKE ? OR apellidos_alumno LIKE ? OR carnet LIKE ?)";
         }
@@ -281,7 +263,6 @@ else {
         if ($result->num_rows > 0) {
             $data = [];
             while ($row = $result->fetch_assoc()) {
-                // Aplicar prefijo G0 solo a grados del 1 al 12
                 if (is_numeric($row['grado']) && intval($row['grado']) >= 1 && intval($row['grado']) <= 12) {
                     $row['grado'] = 'G0' . $row['grado'];
                 }
@@ -295,7 +276,5 @@ else {
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
 }
-
-
 
 $conn->close();

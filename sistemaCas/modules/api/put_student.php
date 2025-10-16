@@ -35,7 +35,6 @@ switch ($action) {
 $conn->close();
 
 function handlePending($data, $conn) {
-    // Validar campos necesarios
     $required_fields = ['id', 'codigo_alumno', 'updated_at', 'estado'];
     $missing_fields = [];
 
@@ -51,7 +50,6 @@ function handlePending($data, $conn) {
         return;
     }
 
-    // Extraer valores
     $id = intval($data['id']);
     $codigo_alumno = htmlspecialchars(trim($data['codigo_alumno']));
     $updated_at = htmlspecialchars(trim($data['updated_at']));
@@ -63,7 +61,6 @@ function handlePending($data, $conn) {
         return;
     }
 
-    // Actualizar el estado del estudiante
     $query = "UPDATE alumno SET estado = ?, updated_at = ? WHERE id_alumno = ? AND codigo_alumno = ?";
     $stmt = $conn->prepare($query);
 
@@ -112,9 +109,6 @@ function updateStudent($data, $conn) {
     $nacimiento = htmlspecialchars(trim($data['nacimiento']));
     $correo_encargado = htmlspecialchars(trim($data['correo_encargado']));
     $cicloActual = htmlspecialchars(trim($data['year']));
-
-    // Debugging: Registrar la consulta en el log de PHP
-    error_log("Intentando actualizar: codigo_alumno = $id, cicloActual = $cicloActual");
 
     $query = "UPDATE alumno 
               SET carnet = ?, nombres_alumno = ?, apellidos_alumno = ?, correo_alumno = ?, grado_alumno = ?, nacimiento_alumno = ?, correo_encargado_llenar_form = ?

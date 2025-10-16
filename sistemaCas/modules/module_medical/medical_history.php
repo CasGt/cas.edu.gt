@@ -18,16 +18,13 @@ validateAccess('medicina');
 </head>
 <body class="text-gray-800">
 
-<!-- Navbar -->
 <?php include '../shared/navbar.php'; ?>
 
-<!-- Espaciador -->
 <div class="mt-4"></div>
 
 <div class="container mx-auto p-6 bg-white rounded-lg shadow-md">
     <h1 class="text-2xl font-bold mb-6 text-gray-700 text-center">Historial médico brindado</h1>
 
-    <!-- Filtros -->
     <div class="flex justify-between items-center mb-4">
         <div>
             <label for="filterYear" class="mr-2 text-gray-700 font-bold">Filtrar por año:</label>
@@ -49,7 +46,6 @@ validateAccess('medicina');
         </div>
     </div>
 
-    <!-- Tabla -->
     <div class="overflow-x-auto">
         <table id="miTabla" class="w-full bg-white border border-gray-300 rounded-lg shadow-md text-center">
             <thead>
@@ -64,12 +60,10 @@ validateAccess('medicina');
                 </tr>
             </thead>
             <tbody>
-                <!-- Filas generadas dinámicamente -->
             </tbody>
         </table>
     </div>
 
-    <!-- Paginación -->
     <div id="pagination" class="flex justify-center mt-4"></div>
 </div>
 
@@ -84,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPage = 1;
     let filteredData = [];
 
-    // Función para cargar consultas médicas
     const loadMedicalConsultations = async (year = "", search = "") => {
         let url = `../api/get_medical_consultations.php`;
         const params = new URLSearchParams();
@@ -109,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Renderizar la tabla
     const renderTable = () => {
         const start = (currentPage - 1) * rowsPerPage;
         const end = start + rowsPerPage;
@@ -130,21 +122,18 @@ document.addEventListener("DOMContentLoaded", () => {
             : `<tr><td colspan="7" class="text-center text-gray-500 p-4">No se encontraron registros.</td></tr>`;
     };
 
-    // Renderizar la paginación
  const renderPagination = () => {
     pagination.innerHTML = '';
     const totalPages = Math.ceil(filteredData.length / rowsPerPage);
 
-    const maxVisibleButtons = 7; // Máximo de botones visibles
+    const maxVisibleButtons = 7; 
     let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
     let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
 
-    // Ajustar el rango si estamos al inicio o al final
     if (endPage - startPage + 1 < maxVisibleButtons) {
         startPage = Math.max(1, endPage - maxVisibleButtons + 1);
     }
 
-    // Botón de ir al inicio
     if (currentPage > 1) {
         const firstButton = document.createElement("button");
         firstButton.textContent = "«";
@@ -157,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination.appendChild(firstButton);
     }
 
-    // Botón de ir a la página anterior
     if (currentPage > 1) {
         const prevButton = document.createElement("button");
         prevButton.textContent = "‹";
@@ -170,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination.appendChild(prevButton);
     }
 
-    // Botones de páginas
     for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");
         button.textContent = i;
@@ -183,7 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination.appendChild(button);
     }
 
-    // Botón de ir a la página siguiente
     if (currentPage < totalPages) {
         const nextButton = document.createElement("button");
         nextButton.textContent = "›";
@@ -196,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination.appendChild(nextButton);
     }
 
-    // Botón de ir al final
     if (currentPage < totalPages) {
         const lastButton = document.createElement("button");
         lastButton.textContent = "»";
@@ -210,11 +195,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 };
 
-    // Eventos de filtros
     yearSelect.addEventListener("change", () => loadMedicalConsultations(yearSelect.value, searchInput.value));
     searchInput.addEventListener("input", () => loadMedicalConsultations(yearSelect.value, searchInput.value));
 
-    // Cargar datos iniciales
     loadMedicalConsultations();
 });
 </script>
