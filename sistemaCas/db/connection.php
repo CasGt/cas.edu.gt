@@ -1,10 +1,10 @@
 <?php
 $host = '127.0.0.1:3306';
 $dbname = 'u185752343_informacion';
-//$username = 'u185752343_admin_cas_info';
-//$password = 'Admin_cas_inscr2025*';
-$username = 'root';
-$password = 'admin';
+$username = 'u185752343_admin_cas_info';
+$password = 'Admin_cas_inscr2025*';
+//$username = 'root';
+//$password = 'admin';
 $conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {

@@ -14,7 +14,7 @@ include './modules/shared/alerts.php';
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
     <?php displayAlert("index"); ?>
-    <div class="container mx-auto px-4 flex-grow">s
+    <div class="container mx-auto px-4 flex-grow">
         <br><br>
         <h1 class="text-2xl font-bold text-center mb-6">Sistema CAS</h1>
         <div class="bg-white shadow-lg rounded-lg flex flex-col lg:flex-row lg:max-w-4xl mx-auto">
