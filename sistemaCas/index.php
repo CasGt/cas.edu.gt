@@ -14,9 +14,9 @@ include './modules/shared/alerts.php';
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
     <?php displayAlert("index"); ?>
-    <div class="container mx-auto px-4 flex-grow">
+    <div class="container mx-auto px-4 flex-grow">s
         <br><br>
-        <h1 class="text-2xl font-bold text-center mb-6">Iniciar sesión</h1>
+        <h1 class="text-2xl font-bold text-center mb-6">Sistema CAS</h1>
         <div class="bg-white shadow-lg rounded-lg flex flex-col lg:flex-row lg:max-w-4xl mx-auto">
             <!-- Formulario -->
             <div class="p-8 lg:w-1/2 flex flex-col justify-center">
@@ -32,9 +32,7 @@ include './modules/shared/alerts.php';
                         <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
                         <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md p-2 mt-1" required>
                     </div>
-                    <div class="text-right">
-                        <a href="./modules/module_user-system/forgot_password.php" class="text-sm text-red-500">Olvidé mi contraseña</a>
-                    </div>
+
                     <button type="submit" class="w-full bg-red-900 text-white py-2 px-4 rounded-md hover:bg-red-600">Iniciar sesión</button>
                 </form>
             </div>

@@ -1,7 +1,5 @@
 <?php
-
 validateAccess('estudiantes');
-
 ?>
 <div id="shared-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white rounded-lg shadow-lg w-full max-w-lg">
@@ -10,7 +8,6 @@ validateAccess('estudiantes');
             <button class="text-white hover:text-gray-300" onclick="closeModal()">&times;</button>
         </div>
         <div class="p-4" id="modal-content">
-            <!-- Aquí se insertará el formulario dinámicamente -->
         </div>
         <div class="bg-gray-100 px-4 py-2 flex justify-end">
     <button class="bg-red-900 text-white px-4 py-2 rounded hover:bg-red-700" onclick="saveChanges()">Guardar Cambios</button>
@@ -108,8 +105,6 @@ validateAccess('estudiantes');
         year,
     };
 
-    console.log("Payload enviado:", payload); // Depuración: Verificar datos enviados
-
     fetch("../../modules/api/put_student.php", {
         method: "POST",
         headers: {
@@ -119,12 +114,12 @@ validateAccess('estudiantes');
     })
     .then((response) => response.json())
     .then((data) => {
-        console.log("Respuesta del servidor:", data); // Depuración
+        console.log("Respuesta del servidor:", data);
 
         if (data.message) {
             alert(data.message);
             closeModal();
-            setTimeout(() => window.location.reload(), 500); // Refresca la página tras cerrar el modal
+            setTimeout(() => window.location.reload(), 500);
         } else {
             alert(data.error || "Error al actualizar el estudiante.");
         }
@@ -134,8 +129,6 @@ validateAccess('estudiantes');
         alert("Ocurrió un error al intentar guardar los cambios.");
     });
 };
-
-
 
     window.closeModal = function () {
         document.getElementById('shared-modal').classList.add('hidden');

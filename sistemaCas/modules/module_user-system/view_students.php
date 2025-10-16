@@ -6,6 +6,7 @@ require '../shared/alerts.php';
 require './modals/modal_edit_students.php';
 require './modals/modal_edit_padre.php';
 require './modals/modal_edit_madre.php';
+
 header('Content-Type: text/html; charset=utf-8');
 
 validateAccess('estudiantes');
@@ -44,7 +45,6 @@ if ($result_grades && $result_grades->num_rows > 0) {
     <div class="container mx-auto px-4 py-6">
         <h1 class="text-3xl font-bold text-gray-800 mb-2">Información estudiantes inscritos</h1>
 
-        <!-- Filtros -->
         <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
             <div class="mb-2 md:mb-0">
                 <label for="year-filter" class="text-gray-700 text-sm font-medium mr-2">Selecciona el año:</label>
@@ -74,6 +74,15 @@ if ($result_grades && $result_grades->num_rows > 0) {
                     placeholder="Ingresa una palabra clave..."
                 />
             </div>
+
+            <div class="mt-2 md:mt-0">
+  <button id="btn-bulk-pass"
+          class="bg-red-900 text-white text-sm px-3 py-2 rounded hover:bg-red-700 disabled:opacity-50">
+    Actualizar contraseñas (filtro actual)
+  </button>
+  <span id="bulk-pass-note" class="text-xs text-gray-500 ml-2"></span>
+</div>
+
         </div>
         <p id="total-data" class="text-gray-600 mb-4"></p>
         <?php include '../shared/table.php'; ?>
@@ -90,6 +99,11 @@ if ($result_grades && $result_grades->num_rows > 0) {
     const gradeFilter = document.getElementById("grade-filter");
     const searchInput = document.getElementById("search-input");
     const pagination = document.getElementById("pagination");
+
+    const btnBulkPass = document.getElementById("btn-bulk-pass");
+    const bulkPassNote = document.getElementById("bulk-pass-note");
+
+
     const headers = [
         "No.", "Editar", "Carnet", "Nombres", "Apellidos",
         "Correo", "Grado", "Nacimiento", "Encargado que llenó el formulario", "Padre", "Madre"
@@ -115,7 +129,6 @@ if ($result_grades && $result_grades->num_rows > 0) {
                 });
                 if (emails.length > 0) {
                     const emailsString = emails.join(", ");
-                    // Copiar al portapapeles
                     navigator.clipboard.writeText(emailsString)
                         .then(() => {
                             alert("Correos copiados al portapapeles.");
@@ -132,7 +145,7 @@ if ($result_grades && $result_grades->num_rows > 0) {
         tableHeaders.appendChild(th);
     });
     const loadTableData = (year, grade = "", search = "", page = 1, rowsPerPage = 30) => {
-        const status = 1; // Estado fijo para view_student
+        const status = 1;
         const formattedGrade = grade.startsWith("G0") ? grade.slice(2) : grade;
         fetch(`../api/get_student.php?year=${year}&status=${status}&grade=${formattedGrade}&search=${search}&page=${page}&rowsPerPage=${rowsPerPage}`)
             .then(response => response.json())
@@ -207,6 +220,88 @@ if ($result_grades && $result_grades->num_rows > 0) {
     searchInput.addEventListener("input", () => loadTableData(yearFilter.value, gradeFilter.value, searchInput.value));
 
     loadTableData(yearFilter.value || new Date().getFullYear());
+
+    async function postPutPassword(formData) {
+  const res = await fetch('../api/put_password_students.php', {
+    method: 'POST',
+    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    body: formData
+  });
+  const json = await res.json();
+  if (!res.ok || json.ok === false) {
+    const msg = json?.message || 'Error desconocido';
+    throw new Error(msg);
+  }
+  return json;
+}
+
+async function bulkUpdatePasswords() {
+  try {
+    if (!filteredData || filteredData.length === 0) {
+      alert("No hay registros en el filtro actual.");
+      return;
+    }
+
+    const codes = filteredData
+      .map(r => r?.codigo_alumno)
+      .filter(Boolean);
+
+    if (codes.length === 0) {
+      alert("No hay códigos de alumno en el resultado actual.");
+      return;
+    }
+
+    btnBulkPass.disabled = true;
+    bulkPassNote.textContent = "Preparando vista previa...";
+
+    const fdPreview = new FormData();
+    fdPreview.append('codigos_bulk', codes.join('\n'));
+    fdPreview.append('cicloActual', yearFilter.value || '');
+    fdPreview.append('dryRun', '1');
+
+    const preview = await postPutPassword(fdPreview);
+    const affected = preview?.result?.affected ?? 0;
+
+    if (affected === 0) {
+      bulkPassNote.textContent = "";
+      alert("No hay registros con estado=1 que cumplan los filtros actuales.");
+      btnBulkPass.disabled = false;
+      return;
+    }
+
+    const ok = confirm(
+      `Se actualizarán ${affected} contraseñas.\n` +
+      `La contraseña quedará igual al código de alumno.\n\n¿Deseas continuar?`
+    );
+    if (!ok) {
+      bulkPassNote.textContent = "";
+      btnBulkPass.disabled = false;
+      return;
+    }
+
+    bulkPassNote.textContent = "Actualizando...";
+
+    const fdRun = new FormData();
+    fdRun.append('codigos_bulk', codes.join('\n'));
+    fdRun.append('cicloActual', yearFilter.value || '');
+    fdRun.append('dryRun', '0');
+
+    const result = await postPutPassword(fdRun);
+    const updAffect = result?.result?.affected ?? 0;
+    const updDone    = result?.result?.updated ?? 0;
+
+    bulkPassNote.textContent = "";
+    alert(`Afectados: ${updAffect}\nActualizados: ${updDone}\nContraseña = código de alumno.`);
+  } catch (err) {
+    console.error(err);
+    bulkPassNote.textContent = "";
+    alert(`Error al actualizar: ${err.message}`);
+  } finally {
+    btnBulkPass.disabled = false;
+  }
+}
+
+btnBulkPass.addEventListener('click', bulkUpdatePasswords);
 });
 
 

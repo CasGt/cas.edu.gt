@@ -6,10 +6,8 @@ if (isset($_GET['codigo_alumno']) && !empty(trim($_GET['codigo_alumno']))) {
     $codigoAlumno = trim($_GET['codigo_alumno']);
      $year = isset($_GET['year']) ? trim($_GET['year']) : 'NO RECIBIDO';
 
-
     try {
         // Consulta específica por `codigo_alumno`ciclo_actual
-        
         $query = "SELECT 
             id_alumno, 
             carnet, 
@@ -44,7 +42,7 @@ if (isset($_GET['codigo_alumno']) && !empty(trim($_GET['codigo_alumno']))) {
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
 } elseif (isset($_GET['action']) && $_GET['action'] === 'pending') {
-    $anio_actual = date("Y");
+    $anio_actual = date("Y")+1;
     
     $grade = isset($_GET['grade']) ? trim($_GET['grade']) : '';
     $search = isset($_GET['search']) ? trim($_GET['search']) : '';

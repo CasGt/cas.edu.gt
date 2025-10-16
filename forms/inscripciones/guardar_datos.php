@@ -5,16 +5,12 @@ ini_set('display_errors', 1);
 
 // Conexi�n a la base de datos
 require './conexion.php';
-$nuevo_anio = date("Y");
-$pass = $_SESSION['password'];
+$nuevo_anio = date("Y")+1;
+
+ 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (!isset($_POST['form_token']) || $_POST['form_token'] !== $_SESSION['form_token']) {
-        die("Error: Formulario inv�lido o ya procesado.");
-    }
 
-    unset($_SESSION['form_token']);
-
-    $codigo_alumno = $_SESSION['id_alumno']; // C�digo �nico del alumno
+    $codigo_alumno = $_SESSION['id_alumno']; 
     $carnet = $_POST['carnet'];
     $nombres_alumno = $_POST['nombres_alumno'];
     $apellidos_alumno = $_POST['apellidos_alumno'];
@@ -28,10 +24,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $estadoUsuario = '2';
 
     // Insertar en la tabla "alumno"
-    $sql_alumno = "INSERT INTO alumno (pass,codigo_alumno, carnet, anioIngresoCas, nombres_alumno, apellidos_alumno, correo_alumno, familiar_vive, nacimiento_alumno, grado_alumno, cicloActual,correo_encargado_llenar_form,encargado_llenar_form, estado) 
-                   VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)"; //9
-    $stmt_alumno = $conn->prepare($sql_alumno);
-    $stmt_alumno->bind_param("ssiissssssissi", $pass, $codigo_alumno, $carnet, $anioIngresoCas,$nombres_alumno, $apellidos_alumno, $correo_alumno, $familiar_vive, $nacimiento_alumno, $grado_alumno, $nuevo_anio,$correo_encargado_lleno_f,$nombre_encargado_lleno_f,$estadoUsuario);
+$sql_alumno = "UPDATE alumno 
+               SET
+                   carnet = ?, 
+                   anioIngresoCas = ?, 
+                   nombres_alumno = ?, 
+                   apellidos_alumno = ?, 
+                   correo_alumno = ?, 
+                   familiar_vive = ?, 
+                   nacimiento_alumno = ?, 
+                   grado_alumno = ?, 
+                   cicloActual = ?, 
+                   correo_encargado_llenar_form = ?, 
+                   encargado_llenar_form = ?, 
+                   estado = ?
+               WHERE codigo_alumno = ? and cicloActual = '2025'";  // o id_alumno, según tu lógica
+
+$stmt_alumno = $conn->prepare($sql_alumno);
+$stmt_alumno->bind_param(
+    "iissssssissss", 
+    $carnet, 
+    $anioIngresoCas, 
+    $nombres_alumno, 
+    $apellidos_alumno, 
+    $correo_alumno, 
+    $familiar_vive, 
+    $nacimiento_alumno, 
+    $grado_alumno, 
+    $nuevo_anio, 
+    $correo_encargado_lleno_f, 
+    $nombre_encargado_lleno_f, 
+    $estadoUsuario,
+    $codigo_alumno // este es el del WHERE
+);
 
     if (!$stmt_alumno->execute()) {
         die("Error al insertar en la tabla alumno: " . $stmt_alumno->error);
@@ -39,7 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if ($stmt_alumno) {
+           
         // Informaci�n m�dica del alumno (vacunas, enfermedades, alergias, medicamentos)
+       
         $actividades_estudiante = $_POST['actividades_estudiante'];
         $enfermedades_estudiante = $_POST['enfermedades_estudiante'];
         $alergias_estudiante = $_POST['alergias_estudiante'];
@@ -95,6 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insertar en la tabla "historial_medico"
         // Insertar en la tabla "historial_medico"
         $sql_historial_medico = "INSERT INTO historial_medico (
+            carnet,
             codigo_alumno, 
             actividades_estudiante, 
             enfermedades_estudiante, 
@@ -148,12 +176,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             tabcin, 
             pasta_lasar,
             cicloActual
-        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         $stmt_historial_medico = $conn->prepare($sql_historial_medico);
 
         $stmt_historial_medico->bind_param(
-            "sssssiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+            "isssssiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+            $carnet,
             $codigo_alumno,
             $actividades_estudiante,
             $enfermedades_estudiante,
@@ -214,7 +243,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Error al insertar en la tabla alumno: " . $stmt_historial_medico->error);
             echo $sql_historial_medico;
         }
-
+   
         $nombres_madre = $_POST['nombres_madre'];
         $apellidos_madre = $_POST['apellidos_madre'];
         $dpi_madre = $_POST['dpi_madre'];
@@ -237,11 +266,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $correo_empresa_madre = $_POST['correo_empresa_madre'];
 
         // Insertar en la tabla "madre"
-        $sql_madre = "INSERT INTO madre (codigo_alumno, nombres_madre, apellidos_madre, dpi_madre, nit_madre, estado_civil_madre, nacionalidad_madre, profesion_madre, departamento_madre, municipio_madre, direccion_madre, telefonocasa_madre, celular_madre, correo_madre, empresalabora_madre, cargoenepresa_madre, departamentoempresa_madre, municipio_empresa_madre, direccion_empresa_madre, telefono_empresa_madre, correo_empresa_madre,cicloActual) 
-                      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql_madre = "INSERT INTO madre (carnet,codigo_alumno, nombres_madre, apellidos_madre, dpi_madre, nit_madre, estado_civil_madre, nacionalidad_madre, profesion_madre, departamento_madre, municipio_madre, direccion_madre, telefonocasa_madre, celular_madre, correo_madre, empresalabora_madre, cargoenepresa_madre, departamentoempresa_madre, municipio_empresa_madre, direccion_empresa_madre, telefono_empresa_madre, correo_empresa_madre,cicloActual) 
+                      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt_madre = $conn->prepare($sql_madre);
         $stmt_madre->bind_param(
-            "sssssssssssiissssssisi",
+            "isssssssssssiissssssisi",
+            $carnet,
             $codigo_alumno,
             $nombres_madre,
             $apellidos_madre,
@@ -270,6 +300,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Informaci�n del padre
+     
         $nombres_padre = $_POST['nombres_padre'];
         $apellidos_padre = $_POST['apellidos_padre'];
         $dpi_padre = $_POST['dpi_padre'];
@@ -292,11 +323,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $correo_empresa_padre = $_POST['correo_empresa_padre'];
 
         // Insertar en la tabla "padre"
-        $sql_padre = "INSERT INTO padre (codigo_alumno, nombres_padre, apellidos_padre, dpi_padre, nit_padre, estado_civil_padre, nacionalidad_padre, profesion_padre, departamento_padre, municipio_padre, direccion_padre, telefonocasa_padre, celular_padre, correo_padre, empresalabora_padre, cargoenepresa_padre, departamentoempresa_padre, municipio_empresa_padre, direccion_empresa_padre, telefono_empresa_padre, correo_empresa_padre,cicloActual) 
-                      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql_padre = "INSERT INTO padre (carnet, codigo_alumno, nombres_padre, apellidos_padre, dpi_padre, nit_padre, estado_civil_padre, nacionalidad_padre, profesion_padre, departamento_padre, municipio_padre, direccion_padre, telefonocasa_padre, celular_padre, correo_padre, empresalabora_padre, cargoenepresa_padre, departamentoempresa_padre, municipio_empresa_padre, direccion_empresa_padre, telefono_empresa_padre, correo_empresa_padre,cicloActual) 
+                      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt_padre = $conn->prepare($sql_padre);
         $stmt_padre->bind_param(
-            "sssssssssssiissssssisi",
+            "isssssssssssiissssssisi",
+            $carnet,
             $codigo_alumno,
             $nombres_padre,
             $apellidos_padre,
@@ -324,6 +356,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$stmt_padre->execute()) {
             die("Error al insertar en la tabla alumno: " . $stmt_padre->error);
         }
+       
         // Personas autorizadas para retirar al alumno (terceros)
         $terceros1_nombre = $_POST['autorizo_retirar1_nombre'];
         $terceros1_parentesco = $_POST['autorizo_retirar1_parentesco'];
@@ -333,10 +366,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $terceros2_telefono = $_POST['autorizo_retirar2_telefono'];
 
         // Insertar en la tabla "terceros"
-        $sql_terceros = "INSERT INTO terceros (codigo_alumno, terceros1_retiran_alumno, terceros1_retiran_alumno_parentesco, terceros1_retiran_alumno_telefono, terceros2_retiran_alumno, terceros2_retiran_alumno_parentesco, terceros2_retiran_alumno_telefono,cicloActual) 
-                         VALUES (?, ?, ?, ?, ?, ?, ?,?)";
+        $sql_terceros = "INSERT INTO terceros (carnet,codigo_alumno, terceros1_retiran_alumno, terceros1_retiran_alumno_parentesco, terceros1_retiran_alumno_telefono, terceros2_retiran_alumno, terceros2_retiran_alumno_parentesco, terceros2_retiran_alumno_telefono,cicloActual) 
+                         VALUES (?,?, ?, ?, ?, ?, ?, ?,?)";
         $stmt_terceros = $conn->prepare($sql_terceros);
-        $stmt_terceros->bind_param("sssissii", $codigo_alumno, $terceros1_nombre, $terceros1_parentesco, $terceros1_telefono, $terceros2_nombre, $terceros2_parentesco, $terceros2_telefono, $nuevo_anio);
+        $stmt_terceros->bind_param("isssissii", $carnet, $codigo_alumno, $terceros1_nombre, $terceros1_parentesco, $terceros1_telefono, $terceros2_nombre, $terceros2_parentesco, $terceros2_telefono, $nuevo_anio);
 
         if (!$stmt_terceros->execute()) {
             die("Error al insertar en la terceros: " . $stmt_terceros->error);

@@ -611,3 +611,19 @@ Consulta ejecutada: SELECT
                             a.codigo_alumno
                         HAVING 
                             MAX(a.updated_at)
+Consulta ejecutada: SELECT 
+                            a.carnet AS a_carnet, a.codigo_alumno AS a_codigo_alumno, a.nombres_alumno AS a_nombres_alumno, a.apellidos_alumno AS a_apellidos_alumno
+                        FROM 
+                            alumno AS a
+                        LEFT JOIN 
+                            madre AS m ON m.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            padre AS p ON p.codigo_alumno = a.codigo_alumno 
+                        LEFT JOIN 
+                            terceros AS t ON t.codigo_alumno = a.codigo_alumno 
+                        WHERE 
+                            a.cicloActual = 2025 AND a.estado = 1
+                        GROUP BY 
+                            a.codigo_alumno
+                        HAVING 
+                            MAX(a.updated_at)

@@ -66,6 +66,7 @@ function hasAccess($module, $role, $permissions) {
                     <ul class="absolute hidden group-hover:block bg-gray-700 py-1 mt-0 rounded shadow-lg z-10 w-48">
                         <li><a href="../module_user-system/activate_students.php" class="block px-4 py-2 hover:bg-gray-600">Gestión de nuevos formularios</a></li>
                         <li><a href="../module_user-system/view_students.php" class="block px-4 py-2 hover:bg-gray-600">Estudiantes Activos</a></li>
+                        <li><a href="../module_user-system/create_students.php" class="block px-4 py-2 hover:bg-gray-600">Crear usuario estudiante</a></li>
                         <li><a href="../module_user-system/export_information.php" class="block px-4 py-2 hover:bg-gray-600">Exportar Información</a></li>
                     </ul>
                 </li>
